@@ -1,0 +1,806 @@
+ULeadRTH — PREMIUM PUBLIC WEBSITE
+
+Build a modern, premium, production-quality public website for ULeadRTH.
+
+PROJECT GOAL
+
+ULeadRTH is a mental health / residential treatment and supportive care organization.
+
+For this first phase, build ONLY the public-facing informational website.
+
+This is NOT currently a web application.
+
+DO NOT build:
+
+* Login
+* Sign up
+* User accounts
+* Patient portal
+* Staff portal
+* Dashboard
+* Database
+* Authentication
+* Admin panel
+* Client management system
+
+Those capabilities may be added later.
+
+For now, the goal is a beautiful, trustworthy, fast, responsive website that explains ULeadRTH, communicates its services and philosophy, and makes it easy for visitors to contact the organization.
+
+⸻
+
+REFERENCE WEBSITE
+
+Use SomethingHumanHealth.com ONLY as a content and industry reference.
+
+Study the type of information presented there, including:
+
+* mental health services
+* whole-person care
+* treatment philosophy
+* conditions supported
+* patient/client journey
+* FAQs
+* contact information
+* insurance/payment information
+* educational content
+
+DO NOT copy its:
+
+* design
+* layout
+* colors
+* typography
+* animations
+* components
+* section arrangement
+* imagery
+* branding
+* wording
+
+ULeadRTH must have its own completely original identity.
+
+The new website should feel MORE MODERN, MORE PREMIUM, MORE HUMAN, and MORE VISUALLY MEMORABLE.
+
+⸻
+
+BRAND
+
+Brand Name:
+
+ULeadRTH
+
+For now, create a sophisticated temporary wordmark using typography.
+
+The brand should communicate:
+
+Care • Stability • Growth • Independence • Dignity • Recovery • Human Connection
+
+The visual experience should feel warm and reassuring without looking childish or overly clinical.
+
+⸻
+
+DESIGN DIRECTION
+
+Create a visual identity combining:
+
+Modern Healthcare × Human Connection × Residential Care × Wellness × Premium Editorial Design
+
+The website should immediately communicate:
+
+“This is a safe place.”
+
+“People are treated with dignity here.”
+
+“This organization is professional.”
+
+“This feels different from a typical care facility website.”
+
+Avoid generic healthcare website design.
+
+DO NOT create a website consisting primarily of:
+
+white background
+
+* blue buttons
+* stock doctor photos
+* endless rounded cards
+* icon grids
+
+We want a custom-designed experience.
+
+⸻
+
+COLOR DIRECTION
+
+Create a sophisticated natural palette.
+
+Suggested direction:
+
+Deep Forest
+Warm Ivory
+Soft Sage
+Stone
+Charcoal
+Subtle Earth Tone Accent
+
+Use color intentionally.
+
+Different sections should have different visual atmospheres while remaining part of one cohesive design system.
+
+⸻
+
+TYPOGRAPHY
+
+Use a premium combination of:
+
+Elegant editorial/display typography for emotional headlines
+
+Clean modern sans-serif typography for descriptions, navigation, buttons, and accessibility.
+
+Headlines should be large, confident, and spacious.
+
+Avoid excessive text.
+
+⸻
+
+HOMEPAGE
+
+The homepage should tell a story rather than simply display information.
+
+1. NAVIGATION
+
+Create a minimal premium sticky navigation.
+
+Logo:
+
+ULeadRTH
+
+Navigation:
+
+Home
+About
+Our Approach
+Services
+Life at ULeadRTH
+Resources
+FAQ
+Contact
+
+Primary CTA:
+
+Get Started
+
+Do NOT add Login or Sign Up.
+
+On mobile, create a polished full-screen navigation experience.
+
+⸻
+
+2. HERO — MAKE THIS SPECIAL
+
+The hero is the most important visual section.
+
+DO NOT use the standard:
+
+Text Left | Image Right
+
+layout.
+
+Create a cinematic, immersive hero.
+
+Possible visual direction:
+
+Full-screen environmental photography or carefully composed layered imagery representing:
+
+peaceful residential environment
+human connection
+nature
+personal growth
+independence
+community
+hope
+
+Headline concept:
+
+A Place to Heal.
+
+A Path to Move Forward.
+
+Supporting message:
+
+Compassionate residential support designed around the person—not just the diagnosis.
+
+CTA:
+
+Explore ULeadRTH
+
+Secondary CTA:
+
+Contact Us
+
+Include a subtle visual cue encouraging scrolling.
+
+Use very subtle cinematic motion.
+
+⸻
+
+3. INTRODUCTION
+
+Transition beautifully from the hero.
+
+Large editorial statement:
+
+Every person deserves the opportunity to move forward.
+
+Introduce ULeadRTH’s philosophy.
+
+Explain that meaningful support goes beyond providing a place to live.
+
+It includes:
+
+stability
+relationships
+daily living skills
+health
+community
+independence
+personal goals
+emotional wellbeing
+
+Keep the copy concise and human.
+
+⸻
+
+4. THE ULEAD APPROACH
+
+Create a signature section.
+
+Headline:
+
+Care centered around the whole person.
+
+Instead of ordinary cards, create an interactive visual system showing interconnected areas of support.
+
+Possible areas:
+
+Mental Wellbeing
+Daily Living
+Physical Wellness
+Relationships
+Community
+Personal Goals
+Independence
+
+Place the individual/person at the center.
+
+Use subtle movement or interaction to communicate how these areas connect.
+
+This should become one of the website’s signature visual elements.
+
+⸻
+
+5. SERVICES
+
+Create an elegant services section.
+
+Do NOT use six identical cards.
+
+Use large alternating editorial layouts with imagery.
+
+Possible service categories:
+
+Residential Support
+
+A safe, structured and supportive living environment.
+
+Individualized Support
+
+Support based on each person’s goals, needs and abilities.
+
+Daily Living Skills
+
+Helping individuals develop confidence in everyday activities.
+
+Community Integration
+
+Supporting meaningful participation in the community.
+
+Wellness Support
+
+Supporting healthy routines, emotional wellbeing and quality of life.
+
+Skill Development
+
+Building abilities that support greater independence.
+
+IMPORTANT:
+
+These are initial content categories.
+
+Do not claim that ULeadRTH provides a specific clinical or regulated service unless that service is confirmed.
+
+⸻
+
+6. LIFE AT ULEADRTH
+
+This section should visually answer:
+
+“What might everyday life here feel like?”
+
+Create an immersive editorial gallery.
+
+Show authentic-feeling imagery representing:
+
+comfortable residential spaces
+shared meals
+outdoor activities
+community outings
+personal activities
+quiet moments
+daily routines
+social connection
+
+Avoid staged medical imagery.
+
+The environment should feel like a HOME—not a hospital.
+
+Use an asymmetric image composition instead of a basic photo grid.
+
+⸻
+
+7. PERSONAL GROWTH
+
+Create an emotional storytelling section.
+
+Large statement:
+
+Support today.
+
+Greater independence tomorrow.
+
+Show how support can help individuals work toward personal goals.
+
+Use a subtle visual journey:
+
+STABILITY
+
+↓
+
+CONNECTION
+
+↓
+
+CONFIDENCE
+
+↓
+
+SKILLS
+
+↓
+
+INDEPENDENCE
+
+Animate this gently during scrolling.
+
+Do not make unrealistic promises about outcomes.
+
+⸻
+
+8. HOW TO GET STARTED
+
+Make the process extremely easy to understand.
+
+01 — Connect
+
+Contact ULeadRTH and tell us what you’re looking for.
+
+02 — Understand
+
+We learn about the individual’s needs, preferences and goals.
+
+03 — Explore Fit
+
+Determine whether ULeadRTH and its available services are appropriate.
+
+04 — Move Forward
+
+Coordinate appropriate next steps.
+
+Present this as a visual journey rather than four ordinary cards.
+
+⸻
+
+9. WHY ULEADRTH
+
+Create a clean trust section around principles such as:
+
+Person-Centered
+Respect & Dignity
+Safe Environment
+Individualized Support
+Community Connection
+Growth & Independence
+
+Do NOT fabricate:
+
+licenses
+certifications
+years of experience
+statistics
+client counts
+success rates
+government partnerships
+reviews
+
+Only display verified facts.
+
+⸻
+
+10. ABOUT
+
+Create a short preview of the About page.
+
+Headline:
+
+Care begins with seeing the person first.
+
+Explain the mission and philosophy in concise, natural language.
+
+CTA:
+
+Our Story →
+
+⸻
+
+11. FAQ
+
+Create an elegant accordion.
+
+Questions can include:
+
+What is ULeadRTH?
+
+Who does ULeadRTH support?
+
+What services are available?
+
+How does the intake process work?
+
+How do I know whether ULeadRTH is the right fit?
+
+Can families participate in planning?
+
+How can I contact ULeadRTH?
+
+Do not invent regulatory or eligibility answers.
+
+Use placeholders where information has not yet been provided.
+
+⸻
+
+12. CONTACT SECTION
+
+Create a beautiful contact experience.
+
+Headline:
+
+Let’s start with a conversation.
+
+Supporting copy:
+
+Whether you’re exploring options for yourself, a family member, or someone you support, we’re here to help you understand the next step.
+
+Basic fields only:
+
+Name
+Email
+Phone
+I’m contacting you as…
+Message
+
+CTA:
+
+Send Inquiry
+
+Do not collect detailed medical or sensitive health information through this basic form.
+
+Include:
+
+“Please do not include sensitive medical information in this form.”
+
+⸻
+
+13. FINAL CTA
+
+Create a memorable final section.
+
+Large typography:
+
+The next step doesn’t have to be complicated.
+
+Start with a conversation.
+
+[ Contact ULeadRTH ]
+
+Use beautiful environmental imagery or an artistic visual transition.
+
+⸻
+
+FOOTER
+
+Create a sophisticated footer.
+
+Include:
+
+ULeadRTH logo/wordmark
+
+Navigation
+
+About
+Services
+Our Approach
+Resources
+FAQ
+Contact
+
+Legal:
+
+Privacy Policy
+Accessibility
+
+Contact information should use placeholders until actual information is provided.
+
+Add:
+
+© ULeadRTH
+
+⸻
+
+PAGES FOR PHASE 1
+
+Keep the architecture SIMPLE.
+
+Build:
+
+/
+Homepage
+
+/about
+About ULeadRTH
+
+/services
+Services
+
+/approach
+Our Approach
+
+/life-at-uleadrth
+Life at ULeadRTH
+
+/resources
+Resources
+
+/faq
+FAQ
+
+/contact
+Contact
+
+/privacy
+Privacy Policy
+
+/accessibility
+Accessibility
+
+NO portal-related routes.
+
+⸻
+
+IMAGE DIRECTION
+
+Images are extremely important.
+
+DO NOT use stereotypical healthcare stock photos.
+
+Avoid:
+
+Doctors with clipboards
+Hospital hallways
+Fake counseling sessions
+People intentionally smiling at the camera
+Medical equipment
+
+Prefer:
+
+beautiful residential environments
+natural light
+Pacific Northwest nature if appropriate
+community activities
+walking
+cooking
+gardening
+art
+quiet moments
+human connection
+comfortable interiors
+personal independence
+
+Images should feel like they were captured by a professional lifestyle photographer.
+
+⸻
+
+MOTION & INTERACTION
+
+Use restrained premium interactions:
+
+Smooth scrolling
+Elegant text reveals
+Image reveals
+Subtle parallax
+Navigation transitions
+Hover microinteractions
+Section transitions
+Soft image zoom
+Scroll-based storytelling
+
+Animation should feel expensive and subtle.
+
+DO NOT animate everything.
+
+Avoid gimmicks.
+
+⸻
+
+RESPONSIVE EXPERIENCE
+
+Design specifically for:
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+Do not simply shrink the desktop website.
+
+Mobile should have:
+
+clean typography
+intentional image cropping
+large touch targets
+simplified animation
+full-screen menu
+easy contact CTA
+
+⸻
+
+TECHNOLOGY
+
+Use:
+
+Next.js
+TypeScript
+Tailwind CSS
+Framer Motion
+Lucide Icons
+
+Keep the architecture simple.
+
+Do not overengineer Phase 1.
+
+Use reusable components and clean code so that future features can be added without rebuilding the website.
+
+⸻
+
+FUTURE-READY — BUT DO NOT BUILD IT
+
+The project may eventually include:
+
+authentication
+client portal
+staff portal
+dashboard
+forms
+document management
+referrals
+CMS
+appointment/intake workflows
+
+DO NOT implement these now.
+
+Only structure the code cleanly enough that future development is possible.
+
+⸻
+
+ACCESSIBILITY
+
+Target WCAG 2.2 AA.
+
+Include:
+
+semantic HTML
+keyboard navigation
+visible focus states
+good contrast
+accessible forms
+proper heading hierarchy
+alt text
+reduced-motion support
+
+⸻
+
+PERFORMANCE
+
+Target:
+
+90+ Lighthouse Performance
+95+ Accessibility
+95+ SEO
+95+ Best Practices
+
+Optimize:
+
+images
+fonts
+animations
+JavaScript
+page loading
+
+⸻
+
+MOST IMPORTANT DESIGN RULE
+
+ULeadRTH must NOT look like an AI-generated template.
+
+Avoid the repetitive pattern:
+
+Hero
+↓
+3 Cards
+↓
+6 Cards
+↓
+Testimonials
+↓
+CTA
+
+Instead create a visual story:
+
+WELCOME → HUMAN CONNECTION → PHILOSOPHY → SUPPORT → DAILY LIFE → GROWTH → TRUST → NEXT STEP
+
+Each section should visually evolve as the visitor scrolls.
+
+The website should feel calm at first, become more expressive while telling the ULeadRTH story, and then become simple again near the contact experience.
+
+⸻
+
+PHASE 1 DEVELOPMENT INSTRUCTION
+
+DO NOT build the entire website immediately.
+
+For the FIRST implementation, build ONLY:
+
+1. Global design system
+2. Navigation
+3. Homepage Hero
+4. Introduction
+5. ULead Approach section
+6. Services preview
+7. Beginning of Life at ULeadRTH section
+8. Responsive mobile version of these sections
+
+Then STOP.
+
+I want to review the design before continuing.
+
+The first implementation should be polished enough that I can judge the actual visual direction.
+
+Do not use generic placeholders everywhere.
+
+Do not overbuild functionality.
+
+Focus primarily on:
+
+VISUAL QUALITY + STORYTELLING + BRAND IDENTITY + RESPONSIVENESS + PERFORMANCE
+
+The first impression should make ULeadRTH feel like a highly professional, modern, trustworthy residential care organization.
