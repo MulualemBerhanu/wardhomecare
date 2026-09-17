@@ -1,10 +1,11 @@
-# [Project name]
+# ULeadRTH Public Website
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A premium, multi-page public website explaining ULeadRTH's residential and supportive care philosophy, services, daily life, resources, and contact process.
 
 ## Run & Operate
 
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/uleadrth-site run dev` — run the public website through its managed workflow
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
@@ -22,19 +23,26 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/uleadrth-site/src/pages/` — public website routes
+- `artifacts/uleadrth-site/src/components/layout/` — shared navigation, shell, and footer
+- `artifacts/uleadrth-site/src/index.css` — visual tokens and global styles
+- `artifacts/uleadrth-site/src/components/SEO.tsx` — route metadata updates
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The public site is frontend-only; do not add authentication, portals, dashboards, or a database in this phase.
+- Unconfirmed operational, clinical, licensing, payment, insurance, eligibility, and outcome claims must remain clearly qualified.
+- The inquiry form is a visual preview until a secure delivery method and real organizational contact details are approved.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+- Multi-page public information architecture covering Home, About, Services, Approach, Life at ULeadRTH, Resources, FAQ, Contact, Privacy, and Accessibility.
+- Responsive editorial experience with accessible navigation, mobile menu, FAQ interactions, route metadata, and reduced-motion support.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+- The website must feel advanced, modern, professional, and intentionally art-directed rather than simple or AI-template-generated.
+- Do not collapse the public website into a single-page experience.
 
 ## Gotchas
 

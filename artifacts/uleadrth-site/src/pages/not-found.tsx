@@ -1,23 +1,34 @@
-import { Card, CardContent } from '@/components/ui/card';
-import { AlertCircle } from 'lucide-react';
+import { SEO } from '@/components/SEO';
+import { Link } from 'wouter';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
-      <Card className="w-full max-w-md mx-4">
-        <CardContent className="pt-6">
-          <div className="flex mb-4 gap-2">
-            <AlertCircle className="h-8 w-8 text-red-500" />
-            <h1 className="text-2xl font-bold text-gray-900">
-              404 Page Not Found
-            </h1>
+    <>
+      <SEO 
+        title="Page Not Found" 
+        description="The page you are looking for cannot be found." 
+        noindex
+      />
+      
+      <section className="min-h-[80vh] flex items-center justify-center bg-paper text-ink pt-32 pb-24">
+        <div className="container-narrow text-center">
+          <div className="font-sans font-bold tracking-widest text-sm uppercase text-clay mb-6">
+            Error 404
           </div>
-
-          <p className="mt-4 text-sm text-gray-600">
-            Did you forget to add the page to the router?
+          <h1 className="font-serif text-5xl lg:text-7xl mb-8">
+            Page Not Found
+          </h1>
+          <p className="text-xl text-ink-soft mb-12 max-w-lg mx-auto">
+            The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
           </p>
-        </CardContent>
-      </Card>
-    </div>
+          <Link 
+            href="/"
+            className="bg-ink text-paper px-8 py-4 text-sm font-bold tracking-wider uppercase hover:bg-clay transition-colors duration-300 inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2"
+          >
+            Return to Homepage
+          </Link>
+        </div>
+      </section>
+    </>
   );
 }
