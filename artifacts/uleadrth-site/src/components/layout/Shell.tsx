@@ -11,8 +11,9 @@ export function Shell({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   return (
-    <div className="min-h-[100dvh] flex flex-col">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-paper focus:text-ink focus:top-0 focus:left-0">
+    <div className="min-h-[100dvh] flex flex-col selection:bg-sand selection:text-ink">
+      <div className="noise-overlay" />
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-ink focus:text-paper focus:top-0 focus:left-0 focus:outline-none">
         Skip to main content
       </a>
       <Header />

@@ -1,127 +1,105 @@
 import { SEO } from '@/components/SEO';
 import { PageHeader } from '@/components/PageHeader';
-import { ArrowDown } from 'lucide-react';
-
-const services = [
-  {
-    id: "residential",
-    title: "Residential Support",
-    description: "A stable, dignified living environment designed for practical growth and comfort.",
-    details: [
-      "Comfortable, intentionally designed shared and private living spaces",
-      "Nutritious meals prepared and shared in community",
-      "Supportive staff presence to assist with daily rhythms",
-      "Assistance with establishing personal routines",
-      "Household activities that foster practical independence"
-    ]
-  },
-  {
-    id: "wellness",
-    title: "Daily Life Skills",
-    description: "Practical support for building a meaningful, sustainable daily rhythm.",
-    details: [
-      "Gentle encouragement for personal care and household responsibilities",
-      "Support with scheduling, budgeting, and organizational tasks",
-      "Opportunities for movement and connection with nature",
-      "Creative expression and skill-building activities",
-      "Exploration of local community resources and transportation"
-    ]
-  },
-  {
-    id: "community",
-    title: "Community Connection",
-    description: "Fostering a sense of belonging within the home and the broader neighborhood.",
-    details: [
-      "Shared meals and group activities",
-      "Supported outings to local parks, cafes, and community spaces",
-      "Opportunities for social connection and peer support",
-      "Assistance in exploring volunteer or educational interests",
-      "Recreational activities that build confidence"
-    ]
-  }
-];
+import { Reveal, StaggerContainer, StaggerItem } from '@/components/ui/motion';
 
 export default function Services() {
   return (
     <>
       <SEO 
-        title="Services & Support" 
-        description="Information about ULeadRTH's residential support, life skills guidance, and community connection." 
+        title="Our Services" 
+        description="Comprehensive residential support focused on practical independence and personal dignity." 
       />
       
       <PageHeader 
-        title="Support, Your Way" 
-        eyebrow="Our Services"
-        description="Our support is practical, personal, and shaped around real life."
-        image="https://images.unsplash.com/photo-1505362116035-7177741d4021?auto=format&fit=crop&q=80&w=2000"
+        title="Residential Support" 
+        eyebrow="Services"
+        description="Our developing model considers how practical routines, a thoughtful environment, and respectful support can work together."
       />
 
-      <section className="py-24 bg-paper text-ink border-b border-ink/5">
+      <section className="py-32 lg:py-48 bg-paper text-ink">
         <div className="container-wide">
-          <div className="max-w-3xl text-2xl lg:text-3xl font-serif leading-snug text-balance">
-            We provide a steady home base so individuals can build the life they want. Support looks different for everyone, and our environment is designed to be responsive to personal needs.
+          <div className="max-w-4xl mb-24 lg:mb-32">
+            <Reveal>
+              <h2 className="font-serif text-4xl lg:text-6xl mb-8 leading-[1.05] tracking-tight">
+                Support grounded in everyday reality.
+              </h2>
+              <p className="text-xl font-light text-ink-soft leading-relaxed">
+                We are developing support around everyday life rather than a clinical schedule. The examples below describe the kinds of practical, social, and personal support the model may include.
+              </p>
+            </Reveal>
           </div>
+
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 lg:gap-x-24">
+            <StaggerItem>
+              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight flex items-center gap-4">
+                <span className="w-12 h-px bg-clay block"></span>
+                Daily Living Support
+              </h3>
+              <ul className="space-y-4 text-lg font-light text-ink-soft">
+                <li>• Assistance with establishing morning and evening routines</li>
+                <li>• Support with personal organization and room care</li>
+                <li>• Meal preparation and culinary skill building</li>
+                <li>• Guidance in managing personal schedules and appointments</li>
+              </ul>
+            </StaggerItem>
+
+            <StaggerItem>
+              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight flex items-center gap-4">
+                <span className="w-12 h-px bg-moss block"></span>
+                Wellness & Rhythm
+              </h3>
+              <ul className="space-y-4 text-lg font-light text-ink-soft">
+                <li>• Facilitation of restorative practices and gentle movement</li>
+                <li>• Support in recognizing and navigating stress triggers</li>
+                <li>• Space for creative expression and hobbies</li>
+                <li>• Encouragement in building sustainable sleep hygiene</li>
+              </ul>
+            </StaggerItem>
+
+            <StaggerItem>
+              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight flex items-center gap-4">
+                <span className="w-12 h-px bg-moss block"></span>
+                Community Integration
+              </h3>
+              <ul className="space-y-4 text-lg font-light text-ink-soft">
+                <li>• Facilitated family communication and boundaries</li>
+                <li>• Support in navigating social interactions within the house</li>
+                <li>• Guided outings to build confidence in public spaces</li>
+                <li>• Assistance exploring volunteer or educational opportunities</li>
+              </ul>
+            </StaggerItem>
+
+            <StaggerItem>
+              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight flex items-center gap-4">
+                <span className="w-12 h-px bg-clay block"></span>
+                Practical Independence
+              </h3>
+              <ul className="space-y-4 text-lg font-light text-ink-soft">
+                <li>• Budgeting and financial organization support</li>
+                <li>• Assistance with transportation planning</li>
+                <li>• Collaborative goal setting and pacing</li>
+                <li>• Transition planning for moving to greater independence</li>
+              </ul>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
-      <section className="py-24 lg:py-32 bg-paper">
-        <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            <div className="lg:col-span-4">
-              <div className="sticky top-32">
-                <h2 className="font-sans font-bold tracking-widest text-sm uppercase text-clay mb-8">What Support May Include</h2>
-                <nav className="flex flex-col gap-4">
-                  {services.map(s => (
-                    <a 
-                      key={s.id} 
-                      href={`#${s.id}`}
-                      className="text-ink-soft hover:text-ink font-serif text-xl lg:text-2xl transition-colors border-b border-ink/10 pb-4 inline-flex items-center justify-between group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4 rounded-sm"
-                    >
-                      {s.title}
-                      <ArrowDown size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </a>
-                  ))}
-                </nav>
-              </div>
-            </div>
-
-            <div className="lg:col-span-8 flex flex-col gap-32">
-              {services.map((service, index) => (
-                <div key={service.id} id={service.id} className="scroll-mt-32">
-                  <div className="text-clay font-sans font-bold tracking-widest text-xs uppercase mb-4">
-                    0{index + 1}
-                  </div>
-                  <h3 className="font-serif text-4xl lg:text-5xl mb-6">{service.title}</h3>
-                  <p className="text-xl text-ink-soft leading-relaxed mb-10 text-balance">
-                    {service.description}
-                  </p>
-                  
-                  <div className="bg-sand/30 p-8 lg:p-12">
-                    <h4 className="font-sans font-bold tracking-widest text-sm uppercase text-ink mb-8 border-b border-ink/10 pb-4">
-                      Potential Elements
-                    </h4>
-                    <ul className="space-y-6">
-                      {service.details.map((detail, i) => (
-                        <li key={i} className="flex gap-4 items-start">
-                          <span className="w-1.5 h-1.5 rounded-full bg-clay mt-2.5 flex-shrink-0" />
-                          <span className="text-ink-soft leading-relaxed">{detail}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 bg-moss text-paper">
+      <section className="py-32 lg:py-48 bg-sand-light">
         <div className="container-narrow text-center">
-          <h2 className="font-serif text-4xl mb-6">Our Role in Care</h2>
-          <p className="text-lg text-paper/90 leading-relaxed text-balance">
-            ULeadRTH provides residential, environmental, and practical life support. We are not a clinical or medical facility. Our focus is on daily living and environmental stability, offering a steady home base that can complement any external providers or clinical care an individual may choose to utilize.
-          </p>
+          <Reveal>
+            <h2 className="font-serif text-4xl lg:text-5xl mb-8 leading-[1.05] tracking-tight">
+              A Note on Scope of Practice
+            </h2>
+            <div className="space-y-6 text-lg font-light text-ink-soft leading-relaxed text-left">
+              <p>
+                 ULeadRTH is presented here as a residential support concept rather than a medical or emergency service. Final service capabilities and boundaries will be confirmed before launch.
+              </p>
+              <p>
+                 Suitability, availability, and any coordination with outside professionals would need to be discussed individually once the operating model and enquiry process are finalized.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>

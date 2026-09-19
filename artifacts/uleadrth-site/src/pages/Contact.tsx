@@ -1,162 +1,152 @@
 import { SEO } from '@/components/SEO';
 import { PageHeader } from '@/components/PageHeader';
-import { useState } from 'react';
-import { Check, Info } from 'lucide-react';
+import { Reveal } from '@/components/ui/motion';
+import { Leaf } from 'lucide-react';
 
 export default function Contact() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitted(true);
-  };
-
   return (
     <>
       <SEO 
         title="Contact Us" 
-        description="Start a conversation with ULeadRTH about our supportive residential environment." 
+        description="Start a conversation with ULeadRTH about residential support and care options." 
       />
       
       <PageHeader 
-        title="Let's Begin" 
+        title="Start a Conversation" 
         eyebrow="Contact"
-        description="There is no need to have the perfect words. Tell us a little about what you are looking for, and we will share what comes next."
+        description="If you are exploring residential support options for yourself or a loved one, we are here to listen and help you determine if ULeadRTH might be the right fit."
       />
 
-      <section className="py-24 lg:py-32 bg-paper text-ink relative">
+      <section className="py-32 lg:py-48 bg-paper text-ink relative">
         <div className="container-wide">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             
-            <div className="lg:col-span-5">
-              <div className="sticky top-32">
-                <h2 className="font-serif text-3xl lg:text-4xl mb-6">A quiet first step.</h2>
-                <p className="text-ink-soft text-lg leading-relaxed mb-10 text-balance">
-                  Share only what feels comfortable. This is a simple expression of interest, not a commitment or an emergency service.
-                </p>
-                
-                <div className="p-6 bg-sand border border-ink/5 flex gap-4 items-start">
-                  <Info className="text-clay flex-shrink-0 mt-0.5" size={20} aria-hidden="true" />
-                  <div>
-                    <h3 className="font-sans font-bold tracking-widest text-xs uppercase text-clay mb-2">Privacy Note</h3>
-                    <p className="text-sm text-ink-soft leading-relaxed">
-                      Please do not include sensitive medical information or diagnoses in this initial form. A member of our team will share more details about our environment during our first conversation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            {/* Form Side */}
             <div className="lg:col-span-7">
-              {isSubmitted ? (
-                <div className="bg-moss p-10 lg:p-16 text-paper min-h-[400px] flex flex-col items-center justify-center text-center animate-fade-up">
-                  <div className="w-16 h-16 rounded-full bg-paper/20 flex items-center justify-center mb-6">
-                    <Check size={32} />
-                  </div>
-                  <h3 className="font-serif text-3xl mb-4">Message Not Sent</h3>
-                  <p className="text-lg text-paper/90 leading-relaxed max-w-md">
-                    This demonstration form is not connected to a live inbox, and no message was transmitted. Once finalized, inquiries will be routed to our team.
+              <Reveal>
+                <div className="bg-sand-light/50 p-10 lg:p-16 border border-sand">
+                  <h2 className="font-serif text-3xl lg:text-4xl mb-4 tracking-tight">Inquire</h2>
+                  <p className="text-ink-soft mb-12 font-light">
+                    This form is a visual preview only and does not transmit data.
                   </p>
-                  <button 
-                    onClick={() => setIsSubmitted(false)}
-                    className="mt-8 text-sm font-bold tracking-widest uppercase border-b border-paper/50 pb-1 hover:border-paper transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper focus-visible:ring-offset-2 focus-visible:ring-offset-moss rounded-sm"
-                  >
-                    Return to form
-                  </button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-8 bg-white p-8 lg:p-12 shadow-sm border border-ink/5">
-                  
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="firstName" className="font-sans font-bold tracking-widest text-xs uppercase text-ink-soft">
-                        First Name <span className="text-clay">*</span>
-                      </label>
-                      <input 
-                        type="text" 
-                        id="firstName" 
-                        required
-                        className="bg-sand/30 border border-ink/10 px-4 py-3 focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/20 transition-all font-sans"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="lastName" className="font-sans font-bold tracking-widest text-xs uppercase text-ink-soft">
-                        Last Name
-                      </label>
-                      <input 
-                        type="text" 
-                        id="lastName" 
-                        className="bg-sand/30 border border-ink/10 px-4 py-3 focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/20 transition-all font-sans"
-                      />
-                    </div>
-                  </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="email" className="font-sans font-bold tracking-widest text-xs uppercase text-ink-soft">
-                        Email Address <span className="text-clay">*</span>
+                  <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div className="space-y-3">
+                        <label htmlFor="firstName" className="block text-[11px] font-medium tracking-[0.2em] uppercase text-ink/70">
+                          First Name
+                        </label>
+                        <input 
+                          type="text" 
+                          id="firstName" 
+                          disabled
+                          className="w-full bg-transparent border-b border-ink/20 py-3 focus:border-clay outline-none transition-colors disabled:opacity-50 text-lg font-serif"
+                          placeholder="Jane"
+                        />
+                      </div>
+                      <div className="space-y-3">
+                        <label htmlFor="lastName" className="block text-[11px] font-medium tracking-[0.2em] uppercase text-ink/70">
+                          Last Name
+                        </label>
+                        <input 
+                          type="text" 
+                          id="lastName" 
+                          disabled
+                          className="w-full bg-transparent border-b border-ink/20 py-3 focus:border-clay outline-none transition-colors disabled:opacity-50 text-lg font-serif"
+                          placeholder="Doe"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-3">
+                      <label htmlFor="email" className="block text-[11px] font-medium tracking-[0.2em] uppercase text-ink/70">
+                        Email Address
                       </label>
                       <input 
                         type="email" 
                         id="email" 
-                        required
-                        className="bg-sand/30 border border-ink/10 px-4 py-3 focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/20 transition-all font-sans"
+                        disabled
+                        className="w-full bg-transparent border-b border-ink/20 py-3 focus:border-clay outline-none transition-colors disabled:opacity-50 text-lg font-serif"
+                        placeholder="jane@example.com"
                       />
                     </div>
-                    <div className="flex flex-col gap-2">
-                      <label htmlFor="phone" className="font-sans font-bold tracking-widest text-xs uppercase text-ink-soft">
-                        Phone Number
+
+                    <div className="space-y-3">
+                      <label htmlFor="interest" className="block text-[11px] font-medium tracking-[0.2em] uppercase text-ink/70">
+                        I am inquiring for
                       </label>
-                      <input 
-                        type="tel" 
-                        id="phone" 
-                        className="bg-sand/30 border border-ink/10 px-4 py-3 focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/20 transition-all font-sans"
-                      />
+                      <select 
+                        id="interest"
+                        disabled
+                        className="w-full bg-transparent border-b border-ink/20 py-3 focus:border-clay outline-none transition-colors disabled:opacity-50 text-lg font-serif appearance-none cursor-not-allowed"
+                      >
+                        <option value="">Myself</option>
+                        <option value="family">A family member</option>
+                        <option value="client">A client</option>
+                      </select>
                     </div>
-                  </div>
 
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="role" className="font-sans font-bold tracking-widest text-xs uppercase text-ink-soft">
-                      I am contacting you as... <span className="text-clay">*</span>
-                    </label>
-                    <select 
-                      id="role" 
-                      required
-                      defaultValue=""
-                      className="bg-sand/30 border border-ink/10 px-4 py-3 focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/20 transition-all font-sans appearance-none rounded-none"
-                    >
-                      <option value="" disabled>Select an option</option>
-                      <option value="self">A prospective resident</option>
-                      <option value="family">A family member or loved one</option>
-                      <option value="professional">A referring professional</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
+                    <div className="space-y-3">
+                      <label htmlFor="message" className="block text-[11px] font-medium tracking-[0.2em] uppercase text-ink/70">
+                        Message
+                      </label>
+                      <textarea 
+                        id="message" 
+                        disabled
+                        rows={4}
+                        className="w-full bg-transparent border-b border-ink/20 py-3 focus:border-clay outline-none transition-colors resize-none disabled:opacity-50 text-lg font-serif"
+                        placeholder="How can we help?"
+                      ></textarea>
+                    </div>
 
-                  <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="font-sans font-bold tracking-widest text-xs uppercase text-ink-soft">
-                      What would you like us to know? <span className="text-clay">*</span>
-                    </label>
-                    <textarea 
-                      id="message" 
-                      required
-                      rows={6}
-                      className="bg-sand/30 border border-ink/10 px-4 py-3 focus:outline-none focus:border-clay focus:ring-1 focus:ring-clay/20 transition-all font-sans resize-y"
-                    ></textarea>
-                  </div>
-
-                  <div className="pt-4">
                     <button 
-                      type="submit"
-                      className="bg-ink text-paper w-full md:w-auto px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-clay transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 rounded-sm"
+                      type="button"
+                      disabled
+                      className="mt-8 bg-ink text-paper px-10 py-5 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-clay hover:text-paper transition-all duration-500 rounded-full cursor-not-allowed opacity-50 w-full"
                     >
                       Send Message
                     </button>
-                  </div>
-                </form>
-              )}
+                  </form>
+                </div>
+              </Reveal>
             </div>
 
+            {/* Info Side */}
+            <div className="lg:col-span-4 lg:col-start-9">
+              <Reveal delay={0.2} className="sticky top-40">
+                <div className="mb-16">
+                  <div className="w-12 h-12 rounded-full bg-clay text-paper flex items-center justify-center mb-8">
+                    <Leaf size={20} strokeWidth={1} />
+                  </div>
+                   <h3 className="font-serif text-3xl mb-6 tracking-tight">Before Launch</h3>
+                  <p className="text-ink-soft text-lg font-light leading-relaxed mb-4">
+                     Confirmed organizational contact details and any public location information will be added here before the website launches.
+                  </p>
+                  <p className="text-ink-soft text-lg font-light leading-relaxed italic">
+                     Please do not use this preview form for urgent or sensitive information.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="font-serif text-3xl mb-6 tracking-tight">What to Expect</h3>
+                  <ul className="space-y-6">
+                     <li className="flex gap-4">
+                       <div className="text-clay font-serif italic text-xl mt-1">01.</div>
+                       <p className="text-ink-soft font-light">No information entered here is sent or stored.</p>
+                     </li>
+                     <li className="flex gap-4">
+                       <div className="text-clay font-serif italic text-xl mt-1">02.</div>
+                       <p className="text-ink-soft font-light">A real enquiry channel will be clearly identified when available.</p>
+                     </li>
+                     <li className="flex gap-4">
+                       <div className="text-clay font-serif italic text-xl mt-1">03.</div>
+                       <p className="text-ink-soft font-light">Service details will be confirmed during a future conversation.</p>
+                     </li>
+                  </ul>
+                </div>
+              </Reveal>
+            </div>
+            
           </div>
         </div>
       </section>
