@@ -30,10 +30,9 @@ export function PageHeader({ title, eyebrow, description, image }: PageHeaderPro
         <div className="max-w-5xl">
           {eyebrow && (
             <Reveal yOffset={20}>
-              <div className="font-sans font-medium text-clay tracking-[0.2em] text-[10px] sm:text-xs uppercase mb-10 flex items-center gap-6">
-                <span>{eyebrow}</span>
-                <span className="w-12 h-px bg-clay/50"></span>
-              </div>
+              <p className="font-sans text-[10px] sm:text-[11px] font-medium tracking-[0.32em] uppercase text-paper/65 mb-10">
+                {eyebrow}
+              </p>
             </Reveal>
           )}
           <Reveal yOffset={40} delay={0.1}>

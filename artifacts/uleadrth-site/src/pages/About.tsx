@@ -33,10 +33,10 @@ export default function About() {
               </Reveal>
               <Reveal delay={0.1} className="space-y-8 text-xl font-light text-ink-soft leading-relaxed">
                 <p>
-                  ULeadRTH was founded on a simple conviction: individuals seeking a path to greater independence deserve an environment that honors their dignity. We exist to provide residential support that feels less like a facility and more like a home.
+                  ULeadRTH is built on a simple conviction: individuals seeking a path to greater independence deserve an environment that honors their dignity. The vision is residential support that feels less like a facility and more like a home.
                 </p>
                 <p>
-                  Rather than expecting individuals to fit into rigid institutional models, we aim to shape our support around the daily rhythms, practical needs, and personal goals of those in our community.
+                  Rather than expecting individuals to fit into rigid institutional models, the model aims to shape support around daily rhythms, practical needs, and personal goals.
                 </p>
               </Reveal>
             </div>
@@ -109,10 +109,10 @@ export default function About() {
                 </h2>
                 <div className="space-y-8 text-ink-soft leading-relaxed font-light text-lg">
                   <p>
-                    While we emphasize a non-institutional atmosphere, we take our responsibility to provide a safe and supportive home seriously.
+                    While the concept emphasizes a non-institutional atmosphere, safety and supportive housing remain central design priorities.
                   </p>
                   <p>
-                    Our goal is to offer genuine compassion while maintaining professional boundaries, operating with transparency to ensure our environment remains a positive space for everyone in the community.
+                    The goal is genuine compassion with clear professional boundaries, and transparency so the environment can remain a positive space for everyone in the community.
                   </p>
                 </div>
               </Reveal>
@@ -122,7 +122,7 @@ export default function About() {
                 <div className="relative h-[60vh] lg:h-[80vh] overflow-hidden">
                   <ParallaxImage 
                     src="/images/approach.jpg" 
-                    alt="Thoughtful care visual" 
+                    alt="Calm residential interior with soft natural light" 
                     speed={0.1}
                   />
                 </div>

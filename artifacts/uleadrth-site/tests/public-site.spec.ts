@@ -3,10 +3,10 @@ import { expect, test } from '@playwright/test';
 const publicPages = [
   {
     path: '/',
-    heading: /A place to heal\./,
+    heading: /A place to land\./,
     title: 'Residential Support & Supportive Care | ULeadRTH',
     description:
-      'ULeadRTH provides residential support and a dignified environment for individuals seeking a path to greater independence.',
+      'ULeadRTH is developing a residential support concept centered on dignity, everyday routines, and a path toward greater independence.',
   },
   {
     path: '/about',
@@ -17,58 +17,59 @@ const publicPages = [
   },
   {
     path: '/services',
-    heading: 'Support, Your Way',
-    title: 'Services & Support | ULeadRTH',
+    heading: 'Residential Support',
+    title: 'Our Services | ULeadRTH',
     description:
-      "Information about ULeadRTH's residential support, life skills guidance, and community connection.",
+      'Comprehensive residential support focused on practical independence and personal dignity.',
   },
   {
     path: '/approach',
-    heading: 'Everything is Connected',
+    heading: 'Dignity & Structure',
     title: 'Our Approach | ULeadRTH',
     description:
-      "Discover ULeadRTH's interconnected whole-person support model, designed for practical independence.",
+      "Discover how ULeadRTH's approach to residential care balances autonomy with supportive structure.",
   },
   {
     path: '/life-at-uleadrth',
-    heading: 'A Home with Room to Grow',
+    heading: 'Life at ULeadRTH',
     title: 'Life at ULeadRTH | ULeadRTH',
     description:
-      "Experience the day-to-day rhythms of ULeadRTH's residential community. A home focused on connection, calm, and practical living.",
+      'Experience the daily rhythms, environment, and community at ULeadRTH.',
   },
   {
     path: '/resources',
-    heading: 'Resources',
-    title: 'Resources & Information | ULeadRTH',
+    heading: 'Information & Support',
+    title: 'Resources & Support | ULeadRTH',
     description:
-      'General educational information and guidance regarding supportive residential care and person-centered approaches.',
+      'Helpful information and external resources for individuals seeking support.',
   },
   {
     path: '/faq',
     heading: 'Common Questions',
     title: 'Frequently Asked Questions | ULeadRTH',
     description:
-      "Answers to common questions about ULeadRTH's residential support and care philosophy.",
+      "Find answers to common questions about ULeadRTH's residential support environment.",
   },
   {
     path: '/contact',
-    heading: "Let's Begin",
+    heading: 'Contact',
     title: 'Contact Us | ULeadRTH',
     description:
-      'Start a conversation with ULeadRTH about our supportive residential environment.',
+      'Contact details for ULeadRTH will be published here before launch. Inquiries are not accepted through this preview site.',
   },
   {
     path: '/privacy',
     heading: 'Privacy Policy',
     title: 'Privacy Policy | ULeadRTH',
-    description: 'Privacy policy and data handling information for ULeadRTH.',
+    description:
+      "Review ULeadRTH's preliminary public website privacy notice and information-handling practices.",
   },
   {
     path: '/accessibility',
     heading: 'Accessibility Statement',
-    title: 'Accessibility Statement | ULeadRTH',
+    title: 'Accessibility | ULeadRTH',
     description:
-      "ULeadRTH's commitment to digital accessibility and inclusive design.",
+      "Read ULeadRTH's commitment to providing an accessible and inclusive public website experience.",
   },
 ] as const;
 
@@ -92,6 +93,14 @@ for (const pageDetails of publicPages) {
       'content',
       pageDetails.description,
     );
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
+      'content',
+      /\/images\/og\.jpg$/,
+    );
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      'href',
+      new RegExp(`${pageDetails.path === '/' ? '/$' : pageDetails.path + '$'}`),
+    );
   });
 }
 
@@ -99,20 +108,21 @@ test('desktop navigation reaches every linked public page', async ({ page }) => 
   await page.goto('/');
 
   const links = [
-    ['About Us', '/about'],
+    ['Home', '/'],
+    ['About', '/about'],
     ['Services', '/services'],
-    ['Our Approach', '/approach'],
+    ['Approach', '/approach'],
     ['Life Here', '/life-at-uleadrth'],
-    ['Resources', '/resources'],
-    ['Get Started', '/contact'],
+    ['Contact', '/contact'],
   ] as const;
 
   for (const [name, path] of links) {
-    await page.getByRole('navigation').getByRole('link', { name }).click();
+    await page.getByRole('navigation').getByRole('link', { name, exact: true }).click();
     await expect(page).toHaveURL(new RegExp(`${path}$`));
   }
 
   const footerLinks = [
+    ['Resources', '/resources'],
     ['FAQ', '/faq'],
     ['Privacy Policy', '/privacy'],
     ['Accessibility', '/accessibility'],
@@ -140,24 +150,24 @@ test.describe('mobile navigation', () => {
     await expect(menu).toBeVisible();
     await expect(menuButton).toHaveAttribute('aria-expanded', 'true');
     await expect(menuButton).toHaveAccessibleName('Close menu');
-    await expect(menu.getByRole('link', { name: 'About Us' })).toBeFocused();
+    await expect(menu.getByRole('link', { name: 'Home' })).toBeFocused();
 
     await page.keyboard.press('Escape');
     await expect(menu).toBeHidden();
     await expect(menuButton).toBeFocused();
 
     const links = [
-      ['About Us', '/about'],
+      ['Home', '/'],
+      ['About', '/about'],
       ['Services', '/services'],
-      ['Our Approach', '/approach'],
+      ['Approach', '/approach'],
       ['Life Here', '/life-at-uleadrth'],
-      ['Resources', '/resources'],
-      ['Get Started', '/contact'],
+      ['Contact', '/contact'],
     ] as const;
 
     for (const [name, path] of links) {
       await menuButton.click();
-      await menu.getByRole('link', { name }).click();
+      await menu.getByRole('link', { name, exact: true }).click();
       await expect(page).toHaveURL(new RegExp(`${path}$`));
     }
   });
@@ -166,35 +176,30 @@ test.describe('mobile navigation', () => {
 test('FAQ controls toggle with keyboard and expose their state', async ({ page }) => {
   await page.goto('/faq');
   const question = page.getByRole('button', {
-    name: 'What kind of support does ULeadRTH provide?',
+    name: 'Who is ULeadRTH designed for?',
   });
 
   await question.focus();
   await page.keyboard.press('Enter');
   await expect(question).toHaveAttribute('aria-expanded', 'true');
   await expect(
-    page.getByText('We provide supportive residential care and life-skills development'),
+    page.getByText(
+      'ULeadRTH is being developed for people exploring a structured, supportive residential environment',
+    ),
   ).toBeVisible();
 
   await page.keyboard.press('Space');
   await expect(question).toHaveAttribute('aria-expanded', 'false');
 });
 
-test('contact controls have visible labels and keyboard-visible focus', async ({
-  page,
-}) => {
+test('contact page explains that inquiries are not open yet', async ({ page }) => {
   await page.goto('/contact');
 
-  for (const label of [
-    'First Name *',
-    'Last Name',
-    'Email Address *',
-    'Phone Number',
-    'I am contacting you as... *',
-    'What would you like us to know? *',
-  ]) {
-    await expect(page.getByLabel(label, { exact: true })).toBeVisible();
-  }
+  await expect(
+    page.getByRole('heading', { level: 2, name: 'Not accepting inquiries yet' }),
+  ).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Our Approach' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Services' })).toBeVisible();
 
   await page.keyboard.press('Tab');
   const skipLink = page.getByRole('link', { name: 'Skip to main content' });
@@ -216,8 +221,5 @@ test('reduced-motion preference disables meaningful animation durations', async 
       Number.parseFloat(getComputedStyle(element).animationDuration),
     );
   expect(animationDuration).toBeLessThanOrEqual(0.00001);
-  await expect(page.locator('html')).toHaveCSS(
-    'scroll-behavior',
-    'auto',
-  );
+  await expect(page.locator('html')).toHaveCSS('scroll-behavior', 'auto');
 });

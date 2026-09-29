@@ -1,6 +1,6 @@
 import { SEO } from '@/components/SEO';
 import { PageHeader } from '@/components/PageHeader';
-import { Reveal, ParallaxImage, StaggerContainer, StaggerItem } from '@/components/ui/motion';
+import { Reveal } from '@/components/ui/motion';
 
 export default function Approach() {
   return (
@@ -37,7 +37,7 @@ export default function Approach() {
                   Many traditional care environments rely on compliance and control. We believe that lasting stability is built through collaboration.
                 </p>
                 <p>
-                  Our approach centers on establishing a "holding environment"—a psychological and physical space that feels safe enough to tolerate the discomfort of growth. We provide structure as a scaffold, not a cage.
+                  Our approach centers on establishing a "holding environment"—a psychological and physical space that feels safe enough to tolerate the discomfort of growth. Structure is intended as a scaffold, not a cage.
                 </p>
               </Reveal>
             </div>

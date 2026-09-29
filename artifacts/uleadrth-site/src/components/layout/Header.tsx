@@ -85,14 +85,15 @@ export function Header() {
   }, [mobileMenuOpen]);
 
   const navLinks = [
+    { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/services', label: 'Services' },
     { href: '/approach', label: 'Approach' },
     { href: '/life-at-uleadrth', label: 'Life Here' },
-    { href: '/resources', label: 'Resources' },
   ];
 
   const isDarkBg = !isScrolled && !mobileMenuOpen;
+  const logoOnDark = isDarkBg || mobileMenuOpen;
   
   return (
     <>
@@ -107,7 +108,7 @@ export function Header() {
             href="/" 
             className={cn(
               "z-50 relative group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4 rounded-sm transition-colors duration-300",
-              isDarkBg ? "text-paper" : "text-ink"
+              logoOnDark ? "text-paper" : "text-ink"
             )}
             data-testid="link-home"
           >
@@ -142,7 +143,7 @@ export function Header() {
               data-testid="link-desktop-contact"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Inquire
+                Contact
               </span>
             </Link>
           </nav>
@@ -152,7 +153,7 @@ export function Header() {
             ref={menuButtonRef}
             className={cn(
               "lg:hidden z-50 relative p-2 -mr-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 rounded-sm",
-              (isDarkBg || mobileMenuOpen) ? "text-paper" : "text-ink"
+              logoOnDark ? "text-paper" : "text-ink"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
@@ -213,7 +214,7 @@ export function Header() {
                   className="inline-flex items-center justify-center text-ink bg-paper px-8 py-5 text-sm font-medium tracking-[0.2em] uppercase hover:bg-clay-soft hover:text-paper transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4 focus-visible:ring-offset-ink rounded-full"
                   data-testid="link-mobile-contact"
                 >
-                  Start a Conversation
+                  Contact
                 </Link>
               </motion.div>
             </div>

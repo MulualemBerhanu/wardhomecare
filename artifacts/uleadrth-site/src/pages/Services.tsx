@@ -31,8 +31,7 @@ export default function Services() {
 
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-24 lg:gap-x-24">
             <StaggerItem>
-              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight flex items-center gap-4">
-                <span className="w-12 h-px bg-clay block"></span>
+              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight">
                 Daily Living Support
               </h3>
               <ul className="space-y-4 text-lg font-light text-ink-soft">
@@ -44,8 +43,7 @@ export default function Services() {
             </StaggerItem>
 
             <StaggerItem>
-              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight flex items-center gap-4">
-                <span className="w-12 h-px bg-moss block"></span>
+              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight">
                 Wellness & Rhythm
               </h3>
               <ul className="space-y-4 text-lg font-light text-ink-soft">
@@ -57,8 +55,7 @@ export default function Services() {
             </StaggerItem>
 
             <StaggerItem>
-              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight flex items-center gap-4">
-                <span className="w-12 h-px bg-moss block"></span>
+              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight">
                 Community Integration
               </h3>
               <ul className="space-y-4 text-lg font-light text-ink-soft">
@@ -70,8 +67,7 @@ export default function Services() {
             </StaggerItem>
 
             <StaggerItem>
-              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight flex items-center gap-4">
-                <span className="w-12 h-px bg-clay block"></span>
+              <h3 className="font-serif text-3xl lg:text-4xl mb-6 tracking-tight">
                 Practical Independence
               </h3>
               <ul className="space-y-4 text-lg font-light text-ink-soft">

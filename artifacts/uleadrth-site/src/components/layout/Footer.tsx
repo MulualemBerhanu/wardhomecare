@@ -11,7 +11,7 @@ export function Footer() {
               <span className="font-serif text-4xl italic tracking-tight group-hover:text-clay-soft transition-colors">ULeadRTH</span>
             </Link>
             <p className="font-serif text-3xl lg:text-4xl leading-snug mb-8 max-w-md text-balance text-paper">
-              A place to heal. A path to move forward.
+              A place to land. A path to move forward.
             </p>
             <p className="text-paper/60 text-lg max-w-sm leading-relaxed font-light">
               A thoughtful residential support concept centered around the whole person.
@@ -19,8 +19,9 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2 lg:col-start-8">
-            <h3 className="font-sans font-medium tracking-[0.2em] text-[10px] uppercase mb-8 text-clay">Organization</h3>
+            <h3 className="font-sans font-medium tracking-[0.2em] text-[10px] uppercase mb-8 text-sand">Organization</h3>
             <ul className="flex flex-col gap-5">
+              <li><Link href="/" className="text-paper/70 hover:text-paper text-sm transition-colors link-editorial pb-1">Home</Link></li>
               <li><Link href="/about" className="text-paper/70 hover:text-paper text-sm transition-colors link-editorial pb-1">About Us</Link></li>
               <li><Link href="/services" className="text-paper/70 hover:text-paper text-sm transition-colors link-editorial pb-1">Services</Link></li>
               <li><Link href="/approach" className="text-paper/70 hover:text-paper text-sm transition-colors link-editorial pb-1">Our Approach</Link></li>
@@ -29,7 +30,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h3 className="font-sans font-medium tracking-[0.2em] text-[10px] uppercase mb-8 text-clay">Support</h3>
+            <h3 className="font-sans font-medium tracking-[0.2em] text-[10px] uppercase mb-8 text-sand">Support</h3>
             <ul className="flex flex-col gap-5">
               <li><Link href="/resources" className="text-paper/70 hover:text-paper text-sm transition-colors link-editorial pb-1">Resources</Link></li>
               <li><Link href="/faq" className="text-paper/70 hover:text-paper text-sm transition-colors link-editorial pb-1">FAQ</Link></li>

@@ -39,7 +39,7 @@ export default function Life() {
               <Reveal yOffset={60} duration={1.2} className="h-full">
                 <ParallaxImage 
                   src="/images/approach.jpg" 
-                  alt="Morning table setting" 
+                  alt="Calm residential interior with soft natural light" 
                   speed={0.1}
                 />
               </Reveal>
@@ -51,7 +51,7 @@ export default function Life() {
               <Reveal yOffset={60} duration={1.2} className="h-full">
                 <ParallaxImage 
                   src="/images/about.jpg" 
-                  alt="Comfortable living room" 
+                  alt="Comfortable living space with natural light" 
                   speed={0.1}
                 />
               </Reveal>

@@ -14,7 +14,7 @@ export default function Resources() {
       <PageHeader 
         title="Information & Support" 
         eyebrow="Resources"
-        description="Finding the right support can be overwhelming. We have compiled a list of general resources that may be helpful as you navigate your options."
+        description="Finding the right support can be overwhelming. Below are general national resources and notes on materials we may publish later."
       />
 
       <section className="py-32 lg:py-48 bg-paper text-ink min-h-[50vh]">
@@ -31,9 +31,24 @@ export default function Resources() {
                   ULeadRTH is not a crisis center. If you or a loved one are experiencing an immediate medical or psychiatric emergency, please use these national resources.
                 </p>
                 <ul className="space-y-4 text-ink-soft font-light">
-                  <li><strong>988</strong> - National Suicide & Crisis Lifeline</li>
-                  <li><strong>911</strong> - Emergency Services</li>
-                  <li><strong>Text HOME to 741741</strong> - Crisis Text Line</li>
+                  <li>
+                    <a href="tel:988" className="text-ink underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 rounded-sm">
+                      <strong>988</strong>
+                    </a>
+                    {' '}— National Suicide &amp; Crisis Lifeline
+                  </li>
+                  <li>
+                    <a href="tel:911" className="text-ink underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 rounded-sm">
+                      <strong>911</strong>
+                    </a>
+                    {' '}— Emergency Services
+                  </li>
+                  <li>
+                    <a href="sms:741741?body=HOME" className="text-ink underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 rounded-sm">
+                      <strong>Text HOME to 741741</strong>
+                    </a>
+                    {' '}— Crisis Text Line
+                  </li>
                 </ul>
               </div>
             </StaggerItem>
@@ -45,15 +60,12 @@ export default function Resources() {
                 </div>
                 <h3 className="font-serif text-3xl mb-6 tracking-tight">Educational Reading</h3>
                 <p className="text-ink-soft leading-relaxed font-light text-lg mb-6">
-                  Understanding the journey of recovery and the importance of environment can be deeply validating.
-                </p>
-                <p className="text-ink-soft font-light text-lg mb-4">
-                  We frequently recommend literature focusing on:
+                  Curated reading lists are not published yet. When available, they may cover topics such as:
                 </p>
                 <ul className="space-y-2 text-ink-soft font-light">
                   <li>• The impact of environment on well-being</li>
                   <li>• Building sustainable habits and routines</li>
-                  <li>• Navigating family dynamics during recovery</li>
+                  <li>• Supporting family dynamics during transitions</li>
                 </ul>
               </div>
             </StaggerItem>
@@ -65,14 +77,8 @@ export default function Resources() {
                 </div>
                 <h3 className="font-serif text-3xl mb-6 tracking-tight">Local Guidance</h3>
                 <p className="text-ink-soft leading-relaxed font-light text-lg mb-6">
-                  For residents joining us, we provide a curated guide to the local area, including:
+                  A local area guide is not available yet. Once a location is confirmed, future materials may include nearby parks, libraries, transit options, and quiet community spaces.
                 </p>
-                <ul className="space-y-2 text-ink-soft font-light">
-                  <li>• Nearby parks and natural spaces</li>
-                  <li>• Local libraries and community centers</li>
-                  <li>• Public transportation options</li>
-                  <li>• Quiet cafes and safe social environments</li>
-                </ul>
               </div>
             </StaggerItem>
 

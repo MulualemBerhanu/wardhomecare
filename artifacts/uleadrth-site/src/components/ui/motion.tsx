@@ -32,7 +32,7 @@ export function Reveal({
         delay: shouldReduceMotion ? 0 : delay, 
         ease: [0.19, 1.0, 0.22, 1.0] 
       }}
-      className={className}
+      className={cn("reveal", className)}
       {...props}
     >
       {children}

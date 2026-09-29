@@ -73,12 +73,23 @@ export default function FAQ() {
               <p className="text-xl text-ink-soft font-light mb-8">
                 Have a question not answered here?
               </p>
-              <Link 
-                href="/contact"
-                className="inline-flex items-center gap-4 text-sm font-medium tracking-[0.16em] uppercase group"
-              >
-                <span className="link-editorial pb-2 text-ink">Reach out directly</span>
-              </Link>
+              <p className="text-ink-soft font-light mb-8 max-w-md mx-auto">
+                A public inquiry channel is not open yet. Check the contact page for launch updates, or explore the approach behind the model.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center gap-4 text-sm font-medium tracking-[0.16em] uppercase group"
+                >
+                  <span className="link-editorial pb-2 text-ink">Contact updates</span>
+                </Link>
+                <Link 
+                  href="/approach"
+                  className="inline-flex items-center gap-4 text-sm font-medium tracking-[0.16em] uppercase group"
+                >
+                  <span className="link-editorial pb-2 text-ink">Our Approach</span>
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>

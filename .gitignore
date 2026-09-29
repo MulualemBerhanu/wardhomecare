@@ -49,3 +49,6 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Local package store
+.pnpm-store/

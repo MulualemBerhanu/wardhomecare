@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <SEO 
         title="Residential Support & Supportive Care" 
-        description="ULeadRTH provides residential support and a dignified environment for individuals seeking a path to greater independence." 
+        description="ULeadRTH is developing a residential support concept centered on dignity, everyday routines, and a path toward greater independence." 
       />
       
       {/* Hero */}
@@ -25,22 +25,21 @@ export default function Home() {
         <div className="container-wide relative z-10 w-full">
           <div className="max-w-6xl">
             <Reveal yOffset={60} duration={1.2}>
-              <div className="font-sans font-medium text-clay tracking-[0.2em] text-[10px] sm:text-xs uppercase mb-10 flex items-center gap-6">
-                <span>Residential Support</span>
-                <span className="w-12 h-px bg-clay/50"></span>
-                <span>A Human Place to Land</span>
+              <div className="mb-10 flex flex-col gap-3.5">
+                <span className="font-serif text-xl sm:text-2xl italic tracking-wide text-sand">
+                  ULeadRTH
+                </span>
+                <span className="font-sans text-[10px] sm:text-[11px] font-medium tracking-[0.32em] uppercase text-paper/65">
+                  Residential Support
+                </span>
               </div>
             </Reveal>
             
             <StaggerContainer delayChildren={0.4} staggerChildren={0.2} className="mb-16">
               <StaggerItem>
                 <h1 className="font-serif text-[4rem] sm:text-[5.5rem] lg:text-[8rem] xl:text-[9.5rem] leading-[0.9] tracking-tight text-balance">
-                  A place to heal.
-                </h1>
-              </StaggerItem>
-              <StaggerItem>
-                <h1 className="font-serif text-[4rem] sm:text-[5.5rem] lg:text-[8rem] xl:text-[9.5rem] leading-[0.9] tracking-tight text-sand italic">
-                  A path to move forward.
+                  A place to land.
+                  <span className="block text-sand italic">A path to move forward.</span>
                 </h1>
               </StaggerItem>
             </StaggerContainer>
@@ -48,7 +47,7 @@ export default function Home() {
             <Reveal delay={1} yOffset={30} duration={1}>
               <div className="flex flex-col md:flex-row md:items-end gap-12 md:gap-24">
                 <p className="font-sans text-lg lg:text-xl text-paper/80 leading-relaxed max-w-md font-light">
-                  Supportive residential care designed around the person—not just a program. An environment built on dignity, autonomy, and quiet strength.
+                  A residential support concept designed around the person—not just a program. An environment built on dignity, autonomy, and quiet strength.
                 </p>
                 <Link 
                   href="/about"
@@ -84,10 +83,10 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.2} className="space-y-8">
                 <p>
-                  ULeadRTH provides a calm residential community for individuals seeking steadier, more independent lives. We aim to create the space, structure, and companionship for each person to discover what moving forward can look like for them.
+                  ULeadRTH is being designed as a calm residential community for individuals seeking steadier, more independent lives. The aim is to create space, structure, and companionship so each person can discover what moving forward can look like for them.
                 </p>
                 <p>
-                  Our environment is designed to offer stability without rigid institutional constraints, providing a dignified setting where connection and daily rhythms are central to the experience.
+                  The intended environment offers stability without rigid institutional constraints—a dignified setting where connection and daily rhythms are central to the experience.
                 </p>
               </Reveal>
             </div>
@@ -171,7 +170,7 @@ export default function Home() {
               <Reveal delay={0.1} yOffset={80} duration={1.2} className="h-full">
                 <ParallaxImage 
                   src="/images/approach.jpg" 
-                  alt="Beautiful dining setting" 
+                  alt="Calm residential interior with soft natural light" 
                   speed={0.15} 
                 />
               </Reveal>
@@ -210,15 +209,15 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-lg lg:text-xl text-paper/80 mb-16 max-w-2xl mx-auto font-light leading-relaxed">
-              If you are looking for a residential environment that honors dignity and supports practical independence, we welcome a conversation.
+              If you are exploring a residential environment that honors dignity and practical independence, learn more about the model we are developing.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <Link 
-              href="/contact"
+              href="/approach"
               className="inline-flex items-center justify-center gap-4 bg-paper text-moss px-10 py-5 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-paper-bright hover:scale-105 transition-all duration-500 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper focus-visible:ring-offset-4 focus-visible:ring-offset-moss shadow-xl shadow-ink/10"
             >
-              Start a Conversation
+              Explore Our Approach
             </Link>
           </Reveal>
         </div>
