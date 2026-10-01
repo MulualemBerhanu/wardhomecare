@@ -10,7 +10,7 @@ const publicPages = [
   },
   {
     path: '/about',
-    heading: 'Our Mission & Philosophy',
+    heading: /Our Mission/,
     title: 'About Us | ULeadRTH',
     description:
       "Learn about ULeadRTH's mission, philosophy, and commitment to supportive residential care.",
@@ -52,7 +52,7 @@ const publicPages = [
   },
   {
     path: '/contact',
-    heading: 'Contact',
+    heading: /conversation/,
     title: 'Contact Us | ULeadRTH',
     description:
       'Contact details for ULeadRTH will be published here before launch. Inquiries are not accepted through this preview site.',
@@ -195,11 +195,13 @@ test('FAQ controls toggle with keyboard and expose their state', async ({ page }
 test('contact page explains that inquiries are not open yet', async ({ page }) => {
   await page.goto('/contact');
 
-  await expect(
-    page.getByRole('heading', { level: 2, name: 'Not accepting inquiries yet' }),
-  ).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Our Approach' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Services' })).toBeVisible();
+  const main = page.locator('#main-content');
+  await expect(main.getByRole('heading', { level: 2, name: /Inquiries/ })).toBeVisible();
+  await expect(main.getByText('Nothing you enter elsewhere on this site is transmitted or stored.')).toBeVisible();
+  await expect(main.getByText('No inquiry form is active on this preview.')).toBeVisible();
+  await expect(main.getByRole('link', { name: 'Our Approach' })).toBeVisible();
+  await expect(main.getByRole('link', { name: 'Services' })).toBeVisible();
+  await expect(main.locator('input, textarea, form')).toHaveCount(0);
 
   await page.keyboard.press('Tab');
   const skipLink = page.getByRole('link', { name: 'Skip to main content' });

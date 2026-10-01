@@ -33,6 +33,9 @@
   --color-clay-soft: #c77a61;
   --color-moss: #5a6858;
   --color-moss-light: #7d8c7b;
+  --color-ivory: #f3efe6;
+  --color-forest: #24302a;
+  --color-night: #12110f;
 
   --font-sans: 'Outfit', sans-serif;
   --font-serif: 'Instrument Serif', serif;
@@ -159,6 +162,19 @@
 .link-editorial:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+.link-editorial[aria-current="page"]::after {
+  transform: scaleX(1);
+  transform-origin: left;
+  opacity: 0.55;
+}
+
+@keyframes botanical-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(8px, -6px, 0); }
+}
+.botanical-drift {
+  animation: botanical-drift 14s ease-in-out infinite alternate;
 }
 
 @media (prefers-reduced-motion: reduce) {

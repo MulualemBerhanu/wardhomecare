@@ -90,6 +90,7 @@ export function Header() {
     { href: '/services', label: 'Services' },
     { href: '/approach', label: 'Approach' },
     { href: '/life-at-uleadrth', label: 'Life Here' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const isDarkBg = !isScrolled && !mobileMenuOpen;
@@ -99,8 +100,8 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.19,1,0.22,1)]",
-          isScrolled ? "bg-paper/90 backdrop-blur-xl border-b border-ink/5 py-4 shadow-sm" : "bg-transparent py-8"
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
+          isScrolled ? "bg-ivory/80 backdrop-blur-xl border-b border-ink/10 py-3" : "bg-transparent py-7"
         )}
       >
         <div className="container-wide flex items-center justify-between">
@@ -112,39 +113,54 @@ export function Header() {
             )}
             data-testid="link-home"
           >
-            <span className="font-serif text-3xl italic tracking-tight">ULeadRTH</span>
+            <span className="inline-block overflow-hidden">
+              <motion.span
+                className="inline-block font-serif text-3xl italic tracking-tight"
+                initial={reduceMotion ? false : { y: '110%' }}
+                animate={{ y: '0%' }}
+                transition={{ duration: reduceMotion ? 0 : 0.7, ease: [0.16, 1, 0.3, 1] }}
+              >
+                ULeadRTH
+              </motion.span>
+            </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-12">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href}
-                className={cn(
-                  "font-sans text-sm font-medium tracking-[0.12em] uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4 rounded-sm link-editorial",
-                  location === link.href 
-                    ? (isDarkBg ? "text-clay-soft" : "text-clay") 
-                    : (isDarkBg ? "text-paper/80 hover:text-paper" : "text-ink/70 hover:text-ink")
-                )}
-                data-testid={`link-desktop-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+            {navLinks.map((link, index) => (
+              <motion.div
+                key={link.href}
+                initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: reduceMotion ? 0 : 0.45, delay: reduceMotion ? 0 : 0.12 + index * 0.04, ease: [0.16, 1, 0.3, 1] }}
               >
-                {link.label}
-              </Link>
+                <Link 
+                  href={link.href}
+                  aria-current={location === link.href ? 'page' : undefined}
+                  className={cn(
+                    "font-sans text-[11px] xl:text-xs font-medium tracking-[0.16em] uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4 rounded-sm link-editorial",
+                    location === link.href 
+                      ? (isDarkBg ? "text-paper" : "text-ink") 
+                      : (isDarkBg ? "text-paper/75 hover:text-paper" : "text-ink/70 hover:text-ink")
+                  )}
+                  data-testid={`link-desktop-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
+                >
+                  {link.label}
+                </Link>
+              </motion.div>
             ))}
             <Link 
               href="/contact"
               className={cn(
-                "relative overflow-hidden px-8 py-3 text-sm font-medium tracking-[0.12em] uppercase transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4 rounded-full group",
+                "group ml-2 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-[11px] font-medium tracking-[0.16em] uppercase transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4",
                 isDarkBg 
-                  ? "bg-paper text-ink hover:bg-paper-bright" 
-                  : "bg-ink text-paper hover:bg-ink-soft"
+                  ? "border-paper/70 text-paper hover:bg-paper hover:text-ink" 
+                  : "border-ink/30 text-ink hover:bg-ink hover:text-paper"
               )}
-              data-testid="link-desktop-contact"
+              data-testid="link-desktop-get-in-touch"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                Contact
-              </span>
+              Get in touch
+              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </nav>
 
@@ -214,7 +230,8 @@ export function Header() {
                   className="inline-flex items-center justify-center text-ink bg-paper px-8 py-5 text-sm font-medium tracking-[0.2em] uppercase hover:bg-clay-soft hover:text-paper transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4 focus-visible:ring-offset-ink rounded-full"
                   data-testid="link-mobile-contact"
                 >
-                  Contact
+                  Get in touch
+                  <span aria-hidden>→</span>
                 </Link>
               </motion.div>
             </div>

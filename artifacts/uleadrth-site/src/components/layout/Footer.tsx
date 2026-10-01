@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-paper pt-32 pb-12 selection:bg-clay selection:text-paper">
+    <footer className="bg-night text-paper pt-28 pb-12 selection:bg-clay selection:text-paper">
       <div className="container-wide">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 mb-32">
           
@@ -11,7 +11,8 @@ export function Footer() {
               <span className="font-serif text-4xl italic tracking-tight group-hover:text-clay-soft transition-colors">ULeadRTH</span>
             </Link>
             <p className="font-serif text-3xl lg:text-4xl leading-snug mb-8 max-w-md text-balance text-paper">
-              A place to land. A path to move forward.
+              A place to land.
+              <span className="block italic">A path to move forward.</span>
             </p>
             <p className="text-paper/60 text-lg max-w-sm leading-relaxed font-light">
               A thoughtful residential support concept centered around the whole person.
