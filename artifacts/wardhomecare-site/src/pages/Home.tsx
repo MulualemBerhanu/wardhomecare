@@ -36,7 +36,8 @@ function Hero() {
       >
         <CampaignImage
           name="hero"
-          alt="Warm residential interior with natural light, wood, and plants"
+          src="/WHC1.png"
+          alt="A Ward Home Care home at dusk, with a lit walkway and an autumn tree"
           priority
           className="scale-105"
         />
@@ -240,8 +241,8 @@ export default function Home() {
     const link = document.createElement('link');
     link.rel = 'preload';
     link.as = 'image';
-    link.href = '/images/home/hero.webp';
-    link.type = 'image/webp';
+    link.href = '/WHC1.png';
+    link.type = 'image/png';
     document.head.appendChild(link);
     return () => link.remove();
   }, []);

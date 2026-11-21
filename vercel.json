@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "vite",
   "installCommand": "pnpm install",
-  "buildCommand": "pnpm --filter @workspace/uleadrth-site run build",
-  "outputDirectory": "artifacts/uleadrth-site/dist/public",
+  "buildCommand": "pnpm --filter @workspace/wardhomecare-site run build",
+  "outputDirectory": "artifacts/wardhomecare-site/dist/public",
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }

@@ -18,13 +18,13 @@ export function CurveDefs() {
   return (
     <svg className="pointer-events-none absolute h-0 w-0" aria-hidden>
       <defs>
-        <clipPath id="ulead-arch" clipPathUnits="objectBoundingBox">
+        <clipPath id="whc-arch" clipPathUnits="objectBoundingBox">
           <path d="M0.07,1 C0.07,1 0.07,0.42 0.07,0.36 C0.07,0.12 0.26,0.015 0.5,0.015 C0.74,0.015 0.93,0.12 0.93,0.36 C0.93,0.42 0.93,1 0.93,1 Z" />
         </clipPath>
-        <clipPath id="ulead-garden" clipPathUnits="objectBoundingBox">
+        <clipPath id="whc-garden" clipPathUnits="objectBoundingBox">
           <path d="M0,0.16 C0.22,0.02 0.34,0.2 0.52,0.06 C0.7,0 0.78,0.14 1,0.05 L1,0.92 C0.78,1 0.55,0.9 0.32,0.98 C0.14,1 0,0.9 0,0.84 Z" />
         </clipPath>
-        <clipPath id="ulead-tomorrow" clipPathUnits="objectBoundingBox">
+        <clipPath id="whc-tomorrow" clipPathUnits="objectBoundingBox">
           <path d="M0.16,0 C0.05,0.18 0.1,0.38 0.04,0.58 C0.1,0.78 0.05,0.92 0.14,1 L1,1 L1,0 Z" />
         </clipPath>
       </defs>

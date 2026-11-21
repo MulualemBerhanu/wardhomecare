@@ -106,18 +106,20 @@ export function CampaignImage({
   className,
   priority = false,
   folder = 'home',
+  src,
 }: {
   name: string;
   alt: string;
   className?: string;
   priority?: boolean;
   folder?: string;
+  src?: string;
 }) {
   return (
     <picture className="block h-full w-full">
-      <source srcSet={`/images/${folder}/${name}.webp`} type="image/webp" />
+      {src ? null : <source srcSet={`/images/${folder}/${name}.webp`} type="image/webp" />}
       <img
-        src={`/images/${folder}/${name}.jpg`}
+        src={src ?? `/images/${folder}/${name}.jpg`}
         alt={alt}
         className={cn('h-full w-full object-cover', className)}
         loading={priority ? 'eager' : 'lazy'}
@@ -144,7 +146,7 @@ export function ArchImage({
   return (
     <motion.div
       className={cn('h-full w-full overflow-hidden', className)}
-      style={{ clipPath: 'url(#ulead-arch)' }}
+      style={{ clipPath: 'url(#whc-arch)' }}
       initial={reduce ? { opacity: 0 } : { y: 48, opacity: 0 }}
       whileInView={{ y: 0, opacity: 1 }}
       viewport={{ once: true, margin: '-10% 0px' }}
