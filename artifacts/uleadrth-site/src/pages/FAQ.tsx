@@ -8,32 +8,33 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Link } from 'wouter';
+import { CONTACT } from '@/lib/brand';
 
 export default function FAQ() {
   const faqs = [
     {
-      question: "Who is ULeadRTH designed for?",
-      answer: "ULeadRTH is being developed for people exploring a structured, supportive residential environment focused on everyday routines, practical confidence, and greater independence. Final suitability criteria have not yet been published."
+      question: "Who does Ward Home Care serve?",
+      answer: "Ward Home Care, Inc. (WHC) provides 24-hour residential services for adults with intellectual and developmental disabilities (I/DD), including those with co-occurring mental health needs."
     },
     {
-      question: "Is this a medical facility?",
-      answer: "The website presents ULeadRTH as a residential support concept, not as an emergency service. Final clinical and non-clinical service boundaries will be published before launch."
+      question: "Where are your homes located?",
+      answer: "Our homes are in established Northeast Salem neighborhoods. Specific addresses are shared during the referral process for appropriate placement and admission discussions. The main office is at 4382 45th Avenue NE, Salem, Oregon."
     },
     {
-      question: "What does a typical day look like?",
-      answer: "The intended approach balances personal routines, practical goals, shared moments, and quiet time. Exact schedules and available activities will depend on the finalized operating model."
+      question: "How do referrals and admissions work?",
+      answer: "Admission decisions are based on individual needs, person preferences, the home’s ability to provide appropriate services, and applicable state requirements. We accept referrals through Marion County IDD."
     },
     {
-      question: "How long do people typically stay?",
-      answer: "No standard length of stay is published yet. Any future timeline would depend on the finalized program and an individual conversation."
+      question: "Do you provide 24-hour staffing?",
+      answer: "Yes. Direct Support Professionals (DSPs) are on-site around the clock with awake overnight coverage."
     },
     {
-      question: "Are families involved in the process?",
-      answer: "The intended model values respectful communication with chosen support networks. The exact process and privacy boundaries will be confirmed before launch."
+      question: "Are you hiring?",
+      answer: "Yes. WHC is hiring Direct Support Professionals. Review the Connect page for perks, applicant requirements, and how to introduce yourself."
     },
     {
-      question: "Can residents leave the property?",
-      answer: "Operating policies have not yet been published. Questions about autonomy, access, and community expectations will be answered once those policies are finalized."
+      question: "How can I contact WHC?",
+      answer: `You can reach Executive Director Abraham Zewoldie by email at ${CONTACT.email}, by phone at ${CONTACT.phones.cellPrimary} or ${CONTACT.phones.office}, or through the form on the Connect page.`
     }
   ];
 
@@ -41,7 +42,7 @@ export default function FAQ() {
     <>
       <SEO 
         title="Frequently Asked Questions" 
-        description="Find answers to common questions about ULeadRTH's residential support environment." 
+        description="Find answers to common questions about Ward Home Care’s 24-hour residential services in Salem, Oregon." 
       />
       
       <PageHeader 
@@ -73,21 +74,18 @@ export default function FAQ() {
               <p className="text-xl text-ink-soft font-light mb-8">
                 Have a question not answered here?
               </p>
-              <p className="text-ink-soft font-light mb-8 max-w-md mx-auto">
-                A public inquiry channel is not open yet. Check the contact page for launch updates, or explore the approach behind the model.
-              </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link 
-                  href="/contact"
-                  className="inline-flex items-center gap-4 text-sm font-medium tracking-[0.16em] uppercase group"
+                  href="/connect"
+                  className="inline-flex items-center justify-center bg-ink text-paper px-10 py-5 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-clay transition-all duration-500 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4"
                 >
-                  <span className="link-editorial pb-2 text-ink">Contact updates</span>
+                  Connect with us
                 </Link>
                 <Link 
-                  href="/approach"
-                  className="inline-flex items-center gap-4 text-sm font-medium tracking-[0.16em] uppercase group"
+                  href="/admissions"
+                  className="inline-flex items-center justify-center border border-ink/20 text-ink px-10 py-5 text-[11px] font-medium tracking-[0.2em] uppercase hover:border-ink transition-all duration-500 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4"
                 >
-                  <span className="link-editorial pb-2 text-ink">Our Approach</span>
+                  Admissions
                 </Link>
               </div>
             </div>

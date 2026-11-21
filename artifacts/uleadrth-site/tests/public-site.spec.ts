@@ -3,73 +3,66 @@ import { expect, test } from '@playwright/test';
 const publicPages = [
   {
     path: '/',
-    heading: /A place to land\./,
-    title: 'Residential Support & Supportive Care | ULeadRTH',
+    heading: /A place to Belong\./,
+    title: '24-Hour Residential Services | Ward Home Care',
     description:
-      'ULeadRTH is developing a residential support concept centered on dignity, everyday routines, and a path toward greater independence.',
+      'Ward Home Care, Inc. (WHC) provides 24-hour residential services for adults with intellectual and developmental disabilities in Salem, Oregon.',
   },
   {
     path: '/about',
-    heading: /Our Mission/,
-    title: 'About Us | ULeadRTH',
+    heading: /Who we/,
+    title: 'About Us | Ward Home Care',
     description:
-      "Learn about ULeadRTH's mission, philosophy, and commitment to supportive residential care.",
+      'Learn about Ward Home Care, Inc.—a state-licensed agency providing 24-hour residential services for adults with I/DD in Salem, Oregon.',
   },
   {
     path: '/services',
-    heading: 'Residential Support',
-    title: 'Our Services | ULeadRTH',
+    heading: /Residential Services/,
+    title: 'What We Do | Ward Home Care',
     description:
-      'Comprehensive residential support focused on practical independence and personal dignity.',
+      'Ward Home Care provides 24-hour residential services and person-centered support for adults with I/DD in Northeast Salem neighborhoods.',
   },
   {
-    path: '/approach',
-    heading: 'Dignity & Structure',
-    title: 'Our Approach | ULeadRTH',
+    path: '/admissions',
+    heading: /right fit/,
+    title: 'Admissions | Ward Home Care',
     description:
-      "Discover how ULeadRTH's approach to residential care balances autonomy with supportive structure.",
+      'Admission decisions at Ward Home Care are based on individual needs, preferences, home capacity, and Oregon requirements. Referrals are accepted through Marion County IDD.',
   },
   {
-    path: '/life-at-uleadrth',
-    heading: 'Life at ULeadRTH',
-    title: 'Life at ULeadRTH | ULeadRTH',
+    path: '/connect',
+    heading: /conversation/,
+    title: 'Connect | Ward Home Care',
     description:
-      'Experience the daily rhythms, environment, and community at ULeadRTH.',
+      'Contact Ward Home Care or apply to join our team. Main office in Salem, Oregon. Email info@wardhomecare.org.',
   },
   {
     path: '/resources',
     heading: 'Information & Support',
-    title: 'Resources & Support | ULeadRTH',
+    title: 'Resources & Support | Ward Home Care',
     description:
-      'Helpful information and external resources for individuals seeking support.',
+      'Helpful information and external resources related to residential support and crisis services.',
   },
   {
     path: '/faq',
     heading: 'Common Questions',
-    title: 'Frequently Asked Questions | ULeadRTH',
+    title: 'Frequently Asked Questions | Ward Home Care',
     description:
-      "Find answers to common questions about ULeadRTH's residential support environment.",
-  },
-  {
-    path: '/contact',
-    heading: /conversation/,
-    title: 'Contact Us | ULeadRTH',
-    description:
-      'Contact details for ULeadRTH will be published here before launch. Inquiries are not accepted through this preview site.',
+      'Find answers to common questions about Ward Home Care’s 24-hour residential services in Salem, Oregon.',
   },
   {
     path: '/privacy',
     heading: 'Privacy Policy',
-    title: 'Privacy Policy | ULeadRTH',
+    title: 'Privacy Policy | Ward Home Care',
     description:
-      "Review ULeadRTH's preliminary public website privacy notice and information-handling practices.",
+      'Review Ward Home Care’s public website privacy notice and information-handling practices.',
   },
   {
     path: '/accessibility',
     heading: 'Accessibility Statement',
-    title: 'Accessibility | ULeadRTH',
+    title: 'Accessibility | Ward Home Care',
     description:
-      "Read ULeadRTH's commitment to providing an accessible and inclusive public website experience.",
+      'Read Ward Home Care’s commitment to providing an accessible and inclusive public website experience.',
   },
 ] as const;
 
@@ -110,10 +103,9 @@ test('desktop navigation reaches every linked public page', async ({ page }) => 
   const links = [
     ['Home', '/'],
     ['About', '/about'],
-    ['Services', '/services'],
-    ['Approach', '/approach'],
-    ['Life Here', '/life-at-uleadrth'],
-    ['Contact', '/contact'],
+    ['What We Do', '/services'],
+    ['Admissions', '/admissions'],
+    ['Connect', '/connect'],
   ] as const;
 
   for (const [name, path] of links) {
@@ -159,10 +151,9 @@ test.describe('mobile navigation', () => {
     const links = [
       ['Home', '/'],
       ['About', '/about'],
-      ['Services', '/services'],
-      ['Approach', '/approach'],
-      ['Life Here', '/life-at-uleadrth'],
-      ['Contact', '/contact'],
+      ['What We Do', '/services'],
+      ['Admissions', '/admissions'],
+      ['Connect', '/connect'],
     ] as const;
 
     for (const [name, path] of links) {
@@ -176,7 +167,7 @@ test.describe('mobile navigation', () => {
 test('FAQ controls toggle with keyboard and expose their state', async ({ page }) => {
   await page.goto('/faq');
   const question = page.getByRole('button', {
-    name: 'Who is ULeadRTH designed for?',
+    name: 'Who does Ward Home Care serve?',
   });
 
   await question.focus();
@@ -184,7 +175,7 @@ test('FAQ controls toggle with keyboard and expose their state', async ({ page }
   await expect(question).toHaveAttribute('aria-expanded', 'true');
   await expect(
     page.getByText(
-      'ULeadRTH is being developed for people exploring a structured, supportive residential environment',
+      'Ward Home Care, Inc. (WHC) provides 24-hour residential services for adults with intellectual and developmental disabilities',
     ),
   ).toBeVisible();
 
@@ -192,22 +183,37 @@ test('FAQ controls toggle with keyboard and expose their state', async ({ page }
   await expect(question).toHaveAttribute('aria-expanded', 'false');
 });
 
-test('contact page explains that inquiries are not open yet', async ({ page }) => {
-  await page.goto('/contact');
+test('connect page shows contact details and an inquiry form', async ({ page }) => {
+  await page.goto('/connect');
 
   const main = page.locator('#main-content');
-  await expect(main.getByRole('heading', { level: 2, name: /Inquiries/ })).toBeVisible();
-  await expect(main.getByText('Nothing you enter elsewhere on this site is transmitted or stored.')).toBeVisible();
-  await expect(main.getByText('No inquiry form is active on this preview.')).toBeVisible();
-  await expect(main.getByRole('link', { name: 'Our Approach' })).toBeVisible();
-  await expect(main.getByRole('link', { name: 'Services' })).toBeVisible();
-  await expect(main.locator('input, textarea, form')).toHaveCount(0);
+  await expect(main.getByRole('heading', { level: 1, name: /conversation/ })).toBeVisible();
+  await expect(main.getByText('info@wardhomecare.org')).toBeVisible();
+  await expect(main.getByText('4382 45th Avenue NE')).toBeVisible();
+  await expect(main.getByRole('heading', { level: 2, name: /Join the WHC team/i })).toBeVisible();
+  await expect(main.getByLabel('First Name')).toBeVisible();
+  await expect(main.getByLabel('Last Name')).toBeVisible();
+  await expect(main.getByLabel('Email')).toBeVisible();
+  await expect(main.getByLabel('Subject')).toBeVisible();
+  await expect(main.getByLabel('Message')).toBeVisible();
+  await expect(main.getByRole('button', { name: 'Submit' })).toBeVisible();
 
   await page.keyboard.press('Tab');
   const skipLink = page.getByRole('link', { name: 'Skip to main content' });
   await expect(skipLink).toBeFocused();
   await expect(skipLink).toBeVisible();
   await expect(skipLink).toHaveCSS('outline-style', 'solid');
+});
+
+test('legacy contact and life routes redirect', async ({ page }) => {
+  await page.goto('/contact');
+  await expect(page).toHaveURL(/\/connect$/);
+
+  await page.goto('/life-at-uleadrth');
+  await expect(page).toHaveURL(/\/services$/);
+
+  await page.goto('/approach');
+  await expect(page).toHaveURL(/\/about$/);
 });
 
 test('reduced-motion preference disables meaningful animation durations', async ({

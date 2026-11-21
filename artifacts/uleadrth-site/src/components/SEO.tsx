@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { useLocation } from 'wouter';
 
+import { BRAND } from '@/lib/brand';
+
 const DEFAULT_OG_IMAGE = '/images/og.jpg';
-const SITE_NAME = 'ULeadRTH';
+const SITE_NAME = BRAND.displayName;
 
 interface SEOProps {
   title: string;
@@ -57,7 +59,7 @@ export function SEO({
   description,
   noindex,
   image = DEFAULT_OG_IMAGE,
-  imageAlt = 'ULeadRTH — residential support concept',
+  imageAlt = 'Ward Home Care — 24-hour residential services in Salem, Oregon',
 }: SEOProps) {
   const [location] = useLocation();
 

@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'wouter';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
+import { BrandLogo } from '@/components/BrandLogo';
 import { cn } from '@/lib/utils';
+import { NAV } from '@/lib/brand';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 export function Header() {
@@ -84,14 +86,7 @@ export function Header() {
     };
   }, [mobileMenuOpen]);
 
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/approach', label: 'Approach' },
-    { href: '/life-at-uleadrth', label: 'Life Here' },
-    { href: '/contact', label: 'Contact' },
-  ];
+  const navLinks = NAV;
 
   const isDarkBg = !isScrolled && !mobileMenuOpen;
   const logoOnDark = isDarkBg || mobileMenuOpen;
@@ -112,17 +107,16 @@ export function Header() {
               logoOnDark ? "text-paper" : "text-ink"
             )}
             data-testid="link-home"
+            aria-label="Ward Home Care home"
           >
-            <span className="inline-block overflow-hidden">
-              <motion.span
-                className="inline-block font-serif text-3xl italic tracking-tight"
-                initial={reduceMotion ? false : { y: '110%' }}
-                animate={{ y: '0%' }}
-                transition={{ duration: reduceMotion ? 0 : 0.7, ease: [0.16, 1, 0.3, 1] }}
-              >
-                ULeadRTH
-              </motion.span>
-            </span>
+            <motion.span
+              className="inline-flex"
+              initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: reduceMotion ? 0 : 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <BrandLogo priority />
+            </motion.span>
           </Link>
 
           {/* Desktop Nav */}
@@ -150,7 +144,7 @@ export function Header() {
               </motion.div>
             ))}
             <Link 
-              href="/contact"
+              href="/connect"
               className={cn(
                 "group ml-2 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 text-[11px] font-medium tracking-[0.16em] uppercase transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4",
                 isDarkBg 
@@ -159,7 +153,7 @@ export function Header() {
               )}
               data-testid="link-desktop-get-in-touch"
             >
-              Get in touch
+              Contact us
               <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </nav>
@@ -226,11 +220,11 @@ export function Header() {
               >
                 <div className="h-px bg-paper/20 w-full" />
                 <Link 
-                  href="/contact"
+                  href="/connect"
                   className="inline-flex items-center justify-center text-ink bg-paper px-8 py-5 text-sm font-medium tracking-[0.2em] uppercase hover:bg-clay-soft hover:text-paper transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4 focus-visible:ring-offset-ink rounded-full"
                   data-testid="link-mobile-contact"
                 >
-                  Get in touch
+                  Contact us
                   <span aria-hidden>→</span>
                 </Link>
               </motion.div>
