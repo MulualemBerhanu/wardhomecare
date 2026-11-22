@@ -95,7 +95,7 @@ for (const pageDetails of publicPages) {
     );
     await expect(page.locator('meta[property="og:image"]')).toHaveAttribute(
       'content',
-      /\/images\/og\.jpg$/,
+      /\/images\/og-ward\.jpg$/,
     );
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       'href',

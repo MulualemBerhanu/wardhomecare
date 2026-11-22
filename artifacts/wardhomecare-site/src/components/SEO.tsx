@@ -3,7 +3,7 @@ import { useLocation } from 'wouter';
 
 import { BRAND } from '@/lib/brand';
 
-const DEFAULT_OG_IMAGE = '/images/og.jpg';
+const DEFAULT_OG_IMAGE = '/images/og-ward.jpg';
 const SITE_NAME = BRAND.displayName;
 
 interface SEOProps {
