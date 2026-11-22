@@ -25,13 +25,13 @@ export const CONTACT = {
   phones: {
     cellPrimary: '669-204-4551',
     cellSecondary: '971-283-4859',
-    office: '503-584-1259',
-    fax: '503-584-1315',
+    home: '503-584-1259',
+    homeFax: '503-584-1315',
   },
   phoneHref: {
     cellPrimary: 'tel:+16692044551',
     cellSecondary: 'tel:+19712834859',
-    office: 'tel:+15035841259',
+    home: 'tel:+15035841259',
   },
   emailHref: 'mailto:info@wardhomecare.org',
 } as const;

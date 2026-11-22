@@ -85,8 +85,8 @@ export default function Privacy() {
                   {CONTACT.email}
                 </a>
                 <br />
-                <a className="link-editorial pb-1" href={CONTACT.phoneHref.office}>
-                  {CONTACT.phones.office}
+                <a className="link-editorial pb-1" href={CONTACT.phoneHref.home}>
+                  {CONTACT.phones.home}
                 </a>
               </p>
             </Article>

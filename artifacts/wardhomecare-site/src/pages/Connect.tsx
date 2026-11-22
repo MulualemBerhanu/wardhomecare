@@ -66,7 +66,7 @@ function ContactDetails() {
           </div>
           <div className="grid gap-6 sm:grid-cols-2">
             <div>
-              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-moss">Phone</p>
+              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-moss">Cell phone</p>
               <ul className="mt-3 space-y-2 text-base font-light">
                 <li>
                   <a className="link-editorial pb-1" href={CONTACT.phoneHref.cellPrimary}>
@@ -78,13 +78,13 @@ function ContactDetails() {
                     {CONTACT.phones.cellSecondary}
                   </a>
                 </li>
-                <li>
-                  <a className="link-editorial pb-1" href={CONTACT.phoneHref.office}>
-                    Office {CONTACT.phones.office}
-                  </a>
-                </li>
-                <li className="text-ink-soft">Fax {CONTACT.phones.fax}</li>
               </ul>
+              <p className="mt-6 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-moss">Home phone</p>
+              <a className="mt-3 inline-block text-base font-light link-editorial pb-1" href={CONTACT.phoneHref.home}>
+                {CONTACT.phones.home}
+              </a>
+              <p className="mt-6 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-moss">Home fax</p>
+              <p className="mt-3 text-base font-light text-ink-soft">{CONTACT.phones.homeFax}</p>
             </div>
             <div>
               <p className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-moss">Email</p>

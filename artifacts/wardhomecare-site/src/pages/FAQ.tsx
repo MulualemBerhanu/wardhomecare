@@ -34,7 +34,7 @@ const QUESTIONS = [
   },
   {
     question: 'How can I contact WHC?',
-    answer: `You can reach Executive Director Abraham Zewoldie by email at ${CONTACT.email}, by phone at ${CONTACT.phones.cellPrimary} or ${CONTACT.phones.office}, or through the form on the Contact us page.`,
+    answer: `You can reach Executive Director Abraham Zewoldie by email at ${CONTACT.email}, by cell phone at ${CONTACT.phones.cellPrimary} or ${CONTACT.phones.cellSecondary}, by home phone at ${CONTACT.phones.home}, or through the form on the Contact us page.`,
   },
 ] as const;
 
