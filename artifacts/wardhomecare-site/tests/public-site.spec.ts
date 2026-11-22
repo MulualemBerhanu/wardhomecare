@@ -30,9 +30,16 @@ const publicPages = [
       'Admission decisions at Ward Home Care are based on individual needs, preferences, home capacity, and Oregon requirements. Referrals are accepted through Marion County IDD.',
   },
   {
+    path: '/careers',
+    heading: /Join the WHC team/,
+    title: 'Careers | Ward Home Care',
+    description:
+      'Ward Home Care is hiring Direct Support Professionals in Salem, Oregon. Review the perks and requirements, then complete the employment application.',
+  },
+  {
     path: '/connect',
     heading: /conversation/,
-    title: 'Connect | Ward Home Care',
+    title: 'Contact Us | Ward Home Care',
     description:
       'Contact Ward Home Care or apply to join our team. Main office in Salem, Oregon. Email info@wardhomecare.org.',
   },
@@ -105,7 +112,8 @@ test('desktop navigation reaches every linked public page', async ({ page }) => 
     ['About', '/about'],
     ['What We Do', '/services'],
     ['Admissions', '/admissions'],
-    ['Connect', '/connect'],
+    ['Careers', '/careers'],
+    ['Contact us', '/connect'],
   ] as const;
 
   for (const [name, path] of links) {
@@ -153,7 +161,8 @@ test.describe('mobile navigation', () => {
       ['About', '/about'],
       ['What We Do', '/services'],
       ['Admissions', '/admissions'],
-      ['Connect', '/connect'],
+      ['Careers', '/careers'],
+      ['Contact us', '/connect'],
     ] as const;
 
     for (const [name, path] of links) {
@@ -190,7 +199,7 @@ test('connect page shows contact details and an inquiry form', async ({ page }) 
   await expect(main.getByRole('heading', { level: 1, name: /conversation/ })).toBeVisible();
   await expect(main.getByText('info@wardhomecare.org')).toBeVisible();
   await expect(main.getByText('4382 45th Avenue NE')).toBeVisible();
-  await expect(main.getByRole('heading', { level: 2, name: /Join the WHC team/i })).toBeVisible();
+  await expect(main.getByRole('link', { name: 'Careers' })).toBeVisible();
   await expect(main.getByLabel('First Name')).toBeVisible();
   await expect(main.getByLabel('Last Name')).toBeVisible();
   await expect(main.getByLabel('Email')).toBeVisible();

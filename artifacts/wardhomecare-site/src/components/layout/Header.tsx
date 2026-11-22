@@ -154,7 +154,7 @@ export function Header() {
               data-testid="link-desktop-get-in-touch"
             >
               Contact us
-              <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+              <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1">→</span>
             </Link>
           </nav>
 

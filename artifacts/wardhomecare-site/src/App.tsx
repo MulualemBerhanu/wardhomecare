@@ -10,6 +10,7 @@ import Home from '@/pages/Home';
 import About from '@/pages/About';
 import Services from '@/pages/Services';
 import Admissions from '@/pages/Admissions';
+import Careers from '@/pages/Careers';
 import Connect from '@/pages/Connect';
 import Resources from '@/pages/Resources';
 import FAQ from '@/pages/FAQ';
@@ -41,6 +42,7 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/services" component={Services} />
           <Route path="/admissions" component={Admissions} />
+          <Route path="/careers" component={Careers} />
           <Route path="/connect" component={Connect} />
           <Route path="/contact">{() => <Redirect to="/connect" />}</Route>
           <Route path="/approach">{() => <Redirect to="/about" />}</Route>

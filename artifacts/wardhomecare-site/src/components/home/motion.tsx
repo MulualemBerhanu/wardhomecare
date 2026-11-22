@@ -1,4 +1,4 @@
-import { motion, useReducedMotion, useScroll, type MotionStyle, type UseScrollOptions } from 'framer-motion';
+import { motion, useMotionValue, useReducedMotion, useScroll, useSpring, type MotionStyle, type UseScrollOptions } from 'framer-motion';
 import { useEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -183,6 +183,41 @@ export function OrganicTransition({
 }) {
   return (
     <motion.div className={className} style={style}>
+      {children}
+    </motion.div>
+  );
+}
+
+export function Magnetic({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const reduce = useReducedMotion() === true;
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 260, damping: 22, mass: 0.35 });
+  const springY = useSpring(y, { stiffness: 260, damping: 22, mass: 0.35 });
+
+  return (
+    <motion.div
+      ref={ref}
+      className={cn('inline-flex', className)}
+      style={reduce ? undefined : { x: springX, y: springY }}
+      onPointerMove={(event) => {
+        if (reduce || !ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        x.set((event.clientX - rect.left - rect.width / 2) * 0.28);
+        y.set((event.clientY - rect.top - rect.height / 2) * 0.42);
+      }}
+      onPointerLeave={() => {
+        x.set(0);
+        y.set(0);
+      }}
+    >
       {children}
     </motion.div>
   );

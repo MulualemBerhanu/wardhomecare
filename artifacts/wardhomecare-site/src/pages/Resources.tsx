@@ -1,100 +1,131 @@
-import { SEO } from '@/components/SEO';
-import { PageHeader } from '@/components/PageHeader';
-import { Reveal, StaggerContainer, StaggerItem } from '@/components/ui/motion';
-import { BookOpen, MapPin, Phone } from 'lucide-react';
 import { Link } from 'wouter';
+import { SEO } from '@/components/SEO';
+import { CurveDefs } from '@/components/home/curves';
+import { PageProgress } from '@/components/home/experience';
+import { PosterHero } from '@/components/home/PosterHero';
+import { RevealText } from '@/components/home/motion';
 import { CONTACT } from '@/lib/brand';
+
+const PLACES = [
+  {
+    index: '01',
+    title: 'Crisis support',
+    body: 'Ward Home Care is not a crisis center. If you or a loved one are experiencing an immediate medical or psychiatric emergency, please use these national resources.',
+  },
+  {
+    index: '02',
+    title: 'Referrals',
+    body: 'We accept referrals through Marion County IDD. Admission decisions consider individual needs, preferences, home capacity, and applicable state requirements.',
+  },
+  {
+    index: '03',
+    title: 'Main office',
+    body: '',
+  },
+] as const;
 
 export default function Resources() {
   return (
     <>
-      <SEO 
-        title="Resources & Support" 
-        description="Helpful information and external resources related to residential support and crisis services." 
+      <SEO
+        title="Resources & Support"
+        description="Helpful information and external resources related to residential support and crisis services."
       />
-      
-      <PageHeader 
-        title="Information & Support" 
-        eyebrow="Resources"
-        description="Finding the right support can feel overwhelming. Below are general national resources and ways to reach Ward Home Care."
+      <PageProgress />
+      <CurveDefs />
+      <PosterHero
+        label="Resources"
+        folder="life"
+        name="books"
+        alt="A stack of books and a sprig of leaves on a wooden table in a sunlit living room"
+        title={
+          <>
+            <RevealText immediate>Information</RevealText>
+            <RevealText immediate delay={0.12} className="italic text-ivory">
+              & Support
+            </RevealText>
+          </>
+        }
       />
-
-      <section className="py-32 lg:py-48 bg-paper text-ink min-h-[50vh]">
+      <section className="bg-ivory pb-28 pt-8 text-ink lg:pb-40 lg:pt-12">
         <div className="container-wide">
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16">
-            
-            <StaggerItem>
-              <div className="bg-sand-light p-12 h-full border border-sand">
-                <div className="w-12 h-12 bg-paper flex items-center justify-center text-clay mb-8 rounded-full">
-                  <Phone size={20} strokeWidth={1.5} />
+          <p className="max-w-xl text-base font-light leading-relaxed text-ink-soft">
+            Finding the right support can feel overwhelming. Below are general national resources and ways to reach Ward Home Care.
+          </p>
+          <ol className="mt-16">
+            {PLACES.map((place) => (
+              <li key={place.index} className="grid gap-6 border-t border-ink/10 py-10 lg:grid-cols-12 lg:py-14">
+                <p className="font-serif text-xl text-ink/30 lg:col-span-2">{place.index}</p>
+                <h2 className="font-serif text-[clamp(32px,4vw,52px)] leading-[0.95] tracking-tight lg:col-span-4">{place.title}</h2>
+                <div className="lg:col-span-5 lg:col-start-8">
+                  {place.index === '01' ? <Crisis /> : null}
+                  {place.index === '02' ? <Referrals body={place.body} /> : null}
+                  {place.index === '03' ? <Office /> : null}
                 </div>
-                <h3 className="font-serif text-3xl mb-6 tracking-tight">Crisis Support</h3>
-                <p className="text-ink-soft leading-relaxed font-light text-lg mb-6">
-                  Ward Home Care is not a crisis center. If you or a loved one are experiencing an immediate medical or psychiatric emergency, please use these national resources.
-                </p>
-                <ul className="space-y-4 text-ink-soft font-light">
-                  <li>
-                    <a href="tel:988" className="text-ink underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 rounded-sm">
-                      <strong>988</strong>
-                    </a>
-                    {' '}— National Suicide &amp; Crisis Lifeline
-                  </li>
-                  <li>
-                    <a href="tel:911" className="text-ink underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 rounded-sm">
-                      <strong>911</strong>
-                    </a>
-                    {' '}— Emergency Services
-                  </li>
-                  <li>
-                    <a href="sms:741741?body=HOME" className="text-ink underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-2 rounded-sm">
-                      <strong>Text HOME to 741741</strong>
-                    </a>
-                    {' '}— Crisis Text Line
-                  </li>
-                </ul>
-              </div>
-            </StaggerItem>
-
-            <StaggerItem>
-              <div className="bg-sand-light p-12 h-full border border-sand">
-                <div className="w-12 h-12 bg-paper flex items-center justify-center text-moss mb-8 rounded-full">
-                  <BookOpen size={20} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-serif text-3xl mb-6 tracking-tight">Referrals</h3>
-                <p className="text-ink-soft leading-relaxed font-light text-lg mb-6">
-                  We accept referrals through Marion County IDD. Admission decisions consider individual needs, preferences, home capacity, and applicable state requirements.
-                </p>
-                <Link href="/admissions" className="text-ink link-editorial pb-1 text-sm uppercase tracking-[0.16em]">
-                  Admissions details
-                </Link>
-              </div>
-            </StaggerItem>
-
-            <StaggerItem>
-              <div className="bg-sand-light p-12 h-full border border-sand">
-                <div className="w-12 h-12 bg-paper flex items-center justify-center text-clay mb-8 rounded-full">
-                  <MapPin size={20} strokeWidth={1.5} />
-                </div>
-                <h3 className="font-serif text-3xl mb-6 tracking-tight">Main Office</h3>
-                <p className="text-ink-soft leading-relaxed font-light text-lg mb-6">
-                  {CONTACT.addressLines[0]}
-                  <br />
-                  {CONTACT.addressLines[1]}
-                </p>
-                <p className="text-ink-soft font-light mb-4">
-                  <a href={CONTACT.emailHref} className="text-ink underline-offset-4 hover:underline">
-                    {CONTACT.email}
-                  </a>
-                </p>
-                <Link href="/connect" className="text-ink link-editorial pb-1 text-sm uppercase tracking-[0.16em]">
-                  Connect with WHC
-                </Link>
-              </div>
-            </StaggerItem>
-
-          </StaggerContainer>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
+    </>
+  );
+}
+
+function Crisis() {
+  return (
+    <>
+      <p className="text-base font-light leading-relaxed text-ink-soft">
+        Ward Home Care is not a crisis center. If you or a loved one are experiencing an immediate medical or psychiatric emergency, please use these national resources.
+      </p>
+      <ul className="mt-6 space-y-4 text-base font-light leading-relaxed">
+        <li>
+          <a className="link-editorial pb-1" href="tel:988">
+            988
+          </a>
+          <span className="text-ink-soft"> — National Suicide & Crisis Lifeline</span>
+        </li>
+        <li>
+          <a className="link-editorial pb-1" href="tel:911">
+            911
+          </a>
+          <span className="text-ink-soft"> — Emergency Services</span>
+        </li>
+        <li>
+          <a className="link-editorial pb-1" href="sms:741741?body=HOME">
+            Text HOME to 741741
+          </a>
+          <span className="text-ink-soft"> — Crisis Text Line</span>
+        </li>
+      </ul>
+    </>
+  );
+}
+
+function Referrals({ body }: { body: string }) {
+  return (
+    <>
+      <p className="text-base font-light leading-relaxed text-ink-soft">{body}</p>
+      <Link href="/admissions" className="mt-6 inline-block font-sans text-[11px] font-medium uppercase tracking-[0.2em] link-editorial pb-1">
+        Admissions details
+      </Link>
+    </>
+  );
+}
+
+function Office() {
+  return (
+    <>
+      <p className="text-base font-light leading-relaxed text-ink-soft">
+        {CONTACT.addressLines[0]}
+        <br />
+        {CONTACT.addressLines[1]}
+      </p>
+      <a href={CONTACT.emailHref} className="mt-4 inline-block text-base font-light link-editorial pb-1">
+        {CONTACT.email}
+      </a>
+      <Link href="/connect" className="mt-6 block font-sans text-[11px] font-medium uppercase tracking-[0.2em] link-editorial pb-1">
+        Contact us
+      </Link>
     </>
   );
 }

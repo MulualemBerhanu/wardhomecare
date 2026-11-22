@@ -41,7 +41,7 @@ export const NAV = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'What We Do' },
   { href: '/admissions', label: 'Admissions' },
-  { href: '/connect', label: 'Connect' },
+  { href: '/careers', label: 'Careers' },
 ] as const;
 
 export const SUPPORT_SERVICES = [

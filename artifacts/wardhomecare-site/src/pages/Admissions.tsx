@@ -1,87 +1,40 @@
-import { useEffect, useRef } from 'react';
 import { Link } from 'wouter';
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { SEO } from '@/components/SEO';
-import { CurveDefs, OrganicSectionBottom, OrganicSectionTop } from '@/components/home/curves';
-import { CampaignImage, EASE, RevealText } from '@/components/home/motion';
+import { CurveDefs, OrganicSectionTop } from '@/components/home/curves';
+import { PageProgress } from '@/components/home/experience';
+import { PosterHero } from '@/components/home/PosterHero';
+import { CampaignImage, RevealText } from '@/components/home/motion';
 
 const IVORY = '#f3efe6';
 const FOREST = '#24302a';
 
 export default function Admissions() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'image';
-    link.href = '/images/life/hero.webp';
-    link.type = 'image/webp';
-    document.head.appendChild(link);
-    return () => link.remove();
-  }, []);
-
   return (
     <>
       <SEO
         title="Admissions"
         description="Admission decisions at Ward Home Care are based on individual needs, preferences, home capacity, and Oregon requirements. Referrals are accepted through Marion County IDD."
       />
+      <PageProgress />
       <CurveDefs />
-      <AdmissionsHero />
+      <PosterHero
+        label="Admissions"
+        folder="life"
+        name="hero"
+        alt="Garden path and residential outdoor seating"
+        title={
+          <>
+            <RevealText immediate>Finding the</RevealText>
+            <RevealText immediate delay={0.12} className="italic text-ivory">
+              right fit.
+            </RevealText>
+          </>
+        }
+      />
       <Process />
       <Nondiscrimination />
       <NextStep />
     </>
-  );
-}
-
-function AdmissionsHero() {
-  const ref = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion() === true;
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  const photoY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 14]);
-  const copyY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : -16]);
-
-  return (
-    <section ref={ref} className="relative bg-night text-ivory">
-      <div className="relative h-[100svh] min-h-[640px] overflow-hidden">
-        <motion.div className="absolute inset-0" style={{ y: photoY }}>
-          <motion.div
-            className="h-full w-full"
-            initial={{ scale: reduce ? 1 : 1.04 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: reduce ? 0.3 : 1.4, ease: EASE }}
-          >
-            <CampaignImage
-              folder="life"
-              name="hero"
-              priority
-              alt="Garden path and residential outdoor seating"
-              className="scale-105"
-            />
-          </motion.div>
-        </motion.div>
-        <div className="absolute inset-0 bg-gradient-to-r from-night/55 via-night/20 to-transparent" />
-        <motion.div style={{ y: copyY }} className="relative z-10 flex h-full flex-col justify-end pb-28">
-          <div className="container-wide">
-            <RevealText immediate delay={0.4} className="font-sans text-[11px] font-medium uppercase tracking-[0.28em] text-sand">
-              03 / Admissions
-            </RevealText>
-            <h1 className="mt-5 font-serif text-[clamp(52px,7vw,110px)] leading-[0.9] tracking-tight">
-              <RevealText immediate delay={0.55}>
-                Finding the
-              </RevealText>
-              <RevealText immediate delay={0.7} className="italic">
-                right fit.
-              </RevealText>
-            </h1>
-            <RevealText immediate delay={0.9} className="mt-6 max-w-lg text-base font-light leading-relaxed text-ivory/85">
-              Admission decisions are based on individual needs, preferences, the home’s ability to provide appropriate services, and applicable state requirements.
-            </RevealText>
-          </div>
-        </motion.div>
-      </div>
-      <OrganicSectionBottom fill={IVORY} variant="lift" className="relative z-10 -mt-16 md:-mt-24" />
-    </section>
   );
 }
 
@@ -117,7 +70,7 @@ function Process() {
             </RevealText>
           </h2>
           <p className="mt-6 max-w-md text-base font-light leading-relaxed text-ink-soft">
-            We accept referrals through Marion County IDD. Specific home addresses are shared during the referral process for appropriate placement and admission discussions.
+            Admission decisions are based on individual needs, preferences, the home’s ability to provide appropriate services, and applicable state requirements. We accept referrals through Marion County IDD. Specific home addresses are shared during the referral process for appropriate placement and admission discussions.
           </p>
         </div>
         <ol className="space-y-0 lg:col-span-6 lg:col-start-7">
@@ -178,7 +131,7 @@ function NextStep() {
             href="/connect"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-ink px-8 py-4 text-[11px] font-medium uppercase tracking-[0.2em] text-paper transition-colors duration-500 hover:bg-clay focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-clay focus-visible:ring-offset-4"
           >
-            Connect with us
+            Contact us
           </Link>
         </div>
       </div>

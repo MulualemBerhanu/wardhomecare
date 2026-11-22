@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@1,6..96,500&family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap');
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -39,6 +39,7 @@
 
   --font-sans: 'Outfit', sans-serif;
   --font-serif: 'Instrument Serif', serif;
+  --font-display: 'Bodoni Moda', 'Times New Roman', serif;
 }
 
 :root {
@@ -175,6 +176,21 @@
 }
 .botanical-drift {
   animation: botanical-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes whc-marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+.whc-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: whc-marquee 56s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .whc-marquee-track {
+    animation: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
